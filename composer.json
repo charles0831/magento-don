@@ -66,7 +66,7 @@
         "laminas/laminas-validator": "^2.6.0",
         "laminas/laminas-view": "~2.11.2",
         "magento/composer": "~1.5.0",
-		"magento/inventory-composer-metapackage": "^1.1",
+		"magento/inventory-composer-metapackage": "1.1.5",
         "magento/magento-composer-installer": ">=0.1.11",		
         "magento/zendframework1": "~1.14.2",
         "monolog/monolog": "^1.17",
@@ -349,6 +349,12 @@
             "Magento\\PhpStan\\": "dev/tests/static/framework/Magento/PhpStan/"
         }
     },
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
     "version": "2.3.5-p1",
     "minimum-stability": "stable"
 }
