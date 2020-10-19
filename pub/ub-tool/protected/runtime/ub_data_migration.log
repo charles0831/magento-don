@@ -1,0 +1,542 @@
+2020/10/18 19:43:05 [info] [ub_data_migration] Start running step #2
+2020/10/18 19:43:05 [info] [ub_data_migration] [Processing][run] Step #2 migration completed with 2 Websites
+2020/10/18 19:43:06 [info] [ub_data_migration] [Processing][run] Step #2 migration completed with 2 Store Groups
+2020/10/18 19:43:07 [info] [ub_data_migration] [Processing][run] Step #2 migration completed with 2 Stores
+2020/10/18 19:43:08 [info] [ub_data_migration] Step #2 migration completed successfully
+2020/10/18 19:43:08 [info] [ub_data_migration] Step #2 migration completed successfully
+
+2020/10/18 19:43:10 [info] [ub_data_migration] Start running step #3
+2020/10/18 19:43:10 [info] [ub_data_migration] [Processing][run] Step #3 migration completed with 3 Attribute Sets
+2020/10/18 19:43:11 [info] [ub_data_migration] [Processing][run] Step #3 migration completed with 10 Attribute Groups
+2020/10/18 19:43:32 [info] [ub_data_migration] [Processing][run] Step #3 migration completed with 100 Attributes
+2020/10/18 19:43:36 [info] [ub_data_migration] [Processing][run] Step #3 migration completed with 23 Attributes
+2020/10/18 19:43:38 [info] [ub_data_migration] Step #3 migration completed successfully
+
+2020/10/18 19:45:03 [info] [ub_data_migration] [Start][run] step #4
+2020/10/18 19:45:03 [info] [ub_data_migration] 
+[Processing][run] Step #4 migration completed with 100 Catalog Categories
+2020/10/18 19:46:08 [info] [ub_data_migration] 
+[Processing][run] Step #4 migration completed with 100 Catalog Categories
+2020/10/18 19:47:10 [info] [ub_data_migration] 
+[Processing][run] Step #4 migration completed with 100 Catalog Categories
+2020/10/18 19:47:43 [info] [ub_data_migration] 
+[Processing][run] Step #4 migration completed with 38 Catalog Categories
+2020/10/18 19:47:43 [info] [ub_data_migration] Step #4 migration completed successfully
+
+2020/10/18 19:48:43 [error] [ub_data_migration] The table "{{inventory_source_item}}" for active record class "Mage2InventorySourceItem" cannot be found in the database.
+2020/10/18 20:36:00 [error] [ub_data_migration] The table "{{inventory_source_item}}" for active record class "Mage2InventorySourceItem" cannot be found in the database.
+2020/10/18 20:51:56 [info] [ub_data_migration] Resetting data migration in the step #5...
+2020/10/18 20:51:56 [info] [ub_data_migration] Step #5 was reset successfully
+2020/10/18 20:52:54 [error] [ub_data_migration] The table "{{inventory_source_item}}" for active record class "Mage2InventorySourceItem" cannot be found in the database.
+2020/10/18 20:53:49 [error] [ub_data_migration] The table "{{inventory_source_item}}" for active record class "Mage2InventorySourceItem" cannot be found in the database.
+2020/10/18 20:59:43 [info] [ub_data_migration] [Start][run] step #5
+2020/10/18 20:59:43 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:01:40 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:03:32 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:05:21 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:07:11 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:09:01 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:10:49 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:12:42 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:14:37 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:16:41 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:18:42 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:20:31 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:22:23 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:24:26 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:26:31 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:28:35 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:30:25 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:32:17 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:34:00 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:36:03 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:38:13 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:40:16 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:42:36 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:44:43 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:45:38 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:46:33 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:47:29 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:48:28 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:49:24 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:50:22 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:51:18 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:52:15 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:53:13 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:54:11 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:55:08 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:56:05 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:57:03 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:58:02 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:58:59 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 21:59:58 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:00:56 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:01:54 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:02:50 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:03:46 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:04:42 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:05:35 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:06:26 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:07:19 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:08:11 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:09:03 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:09:55 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:10:47 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:12:34 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:14:13 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:15:57 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:17:43 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:19:28 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:21:07 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:22:47 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:24:27 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:26:03 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:27:45 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:29:22 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:31:01 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:32:50 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:34:36 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:36:19 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:38:04 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:39:42 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:41:20 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:42:56 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:44:31 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:46:06 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:47:46 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:49:36 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:51:28 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:53:06 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:54:47 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:56:22 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:57:55 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 22:59:32 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 23:01:10 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 23:02:52 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Products;
+2020/10/18 23:04:16 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 68 Products;
+2020/10/18 23:04:30 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:04:44 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:04:57 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:05:10 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:05:24 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:05:37 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:05:51 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:06:04 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:06:18 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:06:31 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:06:45 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:06:59 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:07:12 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:07:26 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:07:39 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:07:52 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:08:06 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:08:19 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:08:32 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:08:46 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:09:00 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:09:14 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:09:28 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:09:41 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:09:54 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:10:08 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:10:21 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:10:35 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:10:48 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:11:02 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:11:15 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:11:29 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:11:43 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:11:56 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:12:09 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:12:23 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:12:37 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:12:50 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:13:04 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:13:18 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:13:31 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:13:45 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:13:59 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:14:12 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:14:26 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:14:39 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:14:53 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:15:07 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:15:21 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:15:34 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:15:47 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:16:02 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:16:16 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:16:29 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:16:43 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:16:56 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:17:10 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:17:24 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:17:38 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:17:51 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:18:05 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:18:18 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:18:32 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:18:46 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:18:59 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:19:12 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:19:26 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:19:40 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:19:54 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:20:07 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:20:20 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:20:34 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:20:47 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:21:01 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:21:15 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:21:29 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:21:42 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:21:56 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:22:09 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:22:23 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:22:36 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:22:49 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:23:03 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:23:16 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:23:30 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:23:43 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:23:57 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:24:10 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:24:23 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:24:37 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:24:51 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:25:05 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:25:18 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:25:32 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:25:46 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:25:59 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 100 Product Links;
+2020/10/18 23:26:07 [info] [ub_data_migration] 
+[Processing][run] Step #5 migration completed with 60 Product Links;
+2020/10/18 23:26:07 [info] [ub_data_migration] Step #5 migration completed successfully
+
+2020/10/19 01:50:25 [info] [ub_data_migration] [Start][run] step #6
+2020/10/19 01:50:25 [info] [ub_data_migration] 
+[Processing][run] Step #6 migration completed with 4 Customer Groups;
+2020/10/19 01:51:04 [info] [ub_data_migration] 
+[Processing][run] Step #6 migration completed with 100 Customers
+2020/10/19 01:51:35 [info] [ub_data_migration] 
+[Processing][run] Step #6 migration completed with 91 Customers
+2020/10/19 01:51:35 [info] [ub_data_migration] Step #6 migration completed successfully
+
+2020/10/19 01:52:00 [info] [ub_data_migration] [Start][run] step #7
+2020/10/19 01:52:00 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 3 Sales Rules;
+2020/10/19 01:52:01 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 13 Sales Order Statuses;
+2020/10/19 01:53:03 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 Sales Orders;
+2020/10/19 01:53:15 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 18 Sales Orders;
+2020/10/19 01:53:53 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 01:55:16 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 01:57:11 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 01:58:00 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 01:59:18 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 01:59:54 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:00:30 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:01:06 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:02:16 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:03:03 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:03:36 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:04:08 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:04:40 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:05:13 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:05:46 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:06:20 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:06:53 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:07:25 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:07:56 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:08:28 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:08:59 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:09:31 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:10:03 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:10:36 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:11:08 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:11:41 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:12:13 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:12:45 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:13:20 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:13:55 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:14:32 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 100 active quotes;
+2020/10/19 02:14:42 [info] [ub_data_migration] 
+[Processing][run] Step #7 migration completed with 29 active quotes;
+2020/10/19 02:14:43 [info] [ub_data_migration] Step #7 migration completed successfully
+
+2020/10/19 02:19:58 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:19:58 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 6 CMS Blocks;
+2020/10/19 02:19:59 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 10 CMS Pages;
+2020/10/19 02:20:00 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:01 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 3 Rating items;
+2020/10/19 02:20:01 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:02 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 2 CatalogProductEntityGroupPrice items;
+2020/10/19 02:20:02 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:03 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 4 TaxClass items;
+2020/10/19 02:20:03 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:04 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 2 TaxCalculationRate items;
+2020/10/19 02:20:04 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:05 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 3 TaxCalculationRule items;
+2020/10/19 02:20:06 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:07 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 72 TaxOrderAggregatedCreated items;
+2020/10/19 02:20:07 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:08 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 56 TaxOrderAggregatedUpdated items;
+2020/10/19 02:20:09 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:18 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 1 Catalogrule items;
+2020/10/19 02:20:18 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:19 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 4 EmailTemplate items;
+2020/10/19 02:20:20 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:21 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 100 NewsletterSubscriber items;
+2020/10/19 02:20:21 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:23 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 100 NewsletterSubscriber items;
+2020/10/19 02:20:23 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:24 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 100 NewsletterSubscriber items;
+2020/10/19 02:20:25 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:26 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 100 NewsletterSubscriber items;
+2020/10/19 02:20:26 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:28 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 100 NewsletterSubscriber items;
+2020/10/19 02:20:28 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:29 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 100 NewsletterSubscriber items;
+2020/10/19 02:20:30 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:31 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 43 NewsletterSubscriber items;
+2020/10/19 02:20:31 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:33 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 1 NewsletterTemplate items;
+2020/10/19 02:20:33 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:35 [info] [ub_data_migration] 
+[Processing][run] Step #8 migration completed with 3 EAVEntityStore items;
+2020/10/19 02:20:35 [info] [ub_data_migration] [Start][run] step #8
+2020/10/19 02:20:36 [info] [ub_data_migration] Step #8 migration completed successfully
+
