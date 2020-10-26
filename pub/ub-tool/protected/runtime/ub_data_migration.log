@@ -540,3 +540,10 @@
 2020/10/19 02:20:35 [info] [ub_data_migration] [Start][run] step #8
 2020/10/19 02:20:36 [info] [ub_data_migration] Step #8 migration completed successfully
 
+2020/10/19 05:08:22 [info] [ub_data_migration] Checking and removing in step #2 is complete.
+2020/10/19 05:08:32 [info] [ub_data_migration] Checking and removing in step #3 is complete.
+2020/10/19 05:08:51 [info] [ub_data_migration] Checking and removing in step #4 is complete.
+2020/10/19 05:15:08 [info] [ub_data_migration] Checking and removing in step #5 is complete.
+2020/10/19 05:15:29 [info] [ub_data_migration] Checking and removing in step #6 is complete.
+2020/10/19 05:29:50 [info] [ub_data_migration] Checking and removing in step #7 is complete.
+2020/10/19 06:54:54 [info] [ub_data_migration] Checking and removing in step #8 is complete.
