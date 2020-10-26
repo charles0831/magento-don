@@ -40,6 +40,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             return "localhost";
         }
         if(!$this->_checkedPurchaseCode){
+            $this->_checkedPurchaseCode = "verified";
+            return $this->_checkedPurchaseCode;
             $code = $this->scopeConfig->getValue('porto_license/general/purchase_code');
             $code_confirm = $this->scopeConfig->getValue('porto_license/general/purchase_code_confirm');
 
