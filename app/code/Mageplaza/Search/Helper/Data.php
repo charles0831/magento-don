@@ -233,6 +233,7 @@ class Data extends AbstractData
                 'u'     => $this->getProductUrl($product) //product url
             ];
             print_r($productList);
+            die;
         }
 
         $this->getMediaHelper()->createJsFile(
