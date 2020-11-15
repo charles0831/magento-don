@@ -232,6 +232,7 @@ class Data extends AbstractData
                 'i'     => $this->getMediaHelper()->getProductImage($product),//image
                 'u'     => $this->getProductUrl($product) //product url
             ];
+            print_r($productList);
         }
 
         $this->getMediaHelper()->createJsFile(
