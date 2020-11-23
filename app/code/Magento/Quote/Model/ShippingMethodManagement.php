@@ -308,6 +308,7 @@ class ShippingMethodManagement implements
     private function getShippingMethods(Quote $quote, $address)
     {
         $output = [];
+        return "OKKKKKKKKKKK";
         $shippingAddress = $quote->getShippingAddress();
         $shippingAddress->addData($this->extractAddressData($address));
         $shippingAddress->setCollectShippingRates(true);
