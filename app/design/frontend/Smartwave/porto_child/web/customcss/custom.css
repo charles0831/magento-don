@@ -1,3 +1,13 @@
 .page-header.type16 .logo {
     margin: 0;
 }
+
+/*mega menu color*/
+.page-header.type16 .navigation li.level0 {
+    color: #229912;
+}
+
+.page-header.type16 .navigation li.level0.active, .page-header.type16 .navigation li.level0:hover {
+    color: #fff;
+    background-color: #229912;
+}
