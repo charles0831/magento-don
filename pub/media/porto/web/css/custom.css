@@ -2213,3 +2213,12 @@ hr.solid {
     font-weight: 600;
     color: #176c0c;
 }
+
+/*new*/
+
+.shipable-product-charges{
+    color: #229912;
+    font-size: 14px;
+    margin-top: 10px;
+    font-Weight: bold;
+}

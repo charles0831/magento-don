@@ -1,10 +1,76 @@
 <?php
-    $product_view = $this->getConfig('porto_settings/product');
-    $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
-    if($block) {
-        $block->setBlockId($product_view['main_custom_block2']);
-    }
-    if($block && isset($product_view['main_custom_block2']) && $product_view['main_custom_block2'] !=''){
-        echo '<div class="custom-block">'.$block->toHtml().'</div>';
-    }
+$product_view = $this->getConfig('porto_settings/product');
+$block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
+if ($block) {
+    $block->setBlockId($product_view['main_custom_block2']);
+}
+if ($block && isset($product_view['main_custom_block2']) && $product_view['main_custom_block2'] != '') {
+    echo '<div class="custom-block">' . $block->toHtml() . '</div>';
+}
 ?>
+
+<div class="shipable-product-charges">
+    <span style="display:block; margin-bottom:10px;font-size: 17px;color: #333;">Shipping Options at Checkout: </span>
+    <div class="shipable-product">
+        <?php
+        $_product = \Magento\Framework\App\ObjectManager::getInstance()->get(\Magento\Framework\Registry::class)->registry('product');
+        if ($_product->getAttributeText('shipable') == 'Yes') {
+            $productWeight = $_product->getWeight();
+            if ($productWeight < 150) {
+                $BoxWidth = $_product->getBoxWidth();
+                $BoxLength = $_product->getBoxLength();
+                $BoxHeight = $_product->getBoxHeight();
+                $BoxDimension = $BoxLength + ($BoxWidth * 2) + ($BoxHeight * 2);
+                if ($BoxDimension >= 0 && $BoxDimension <= 130) {
+                    echo "<ul class='can-ship'>
+                                        <li>Free Shipping Via FedEx</li>
+                                        <li>$39.00 White Glove Delivery Within 50 Miles of Stores</li>
+                                        <li>Free In Store Pickup Plus Free Assembley</li>
+                                     </ul>";
+                } else if ($BoxDimension > 130 && $BoxDimension <= 164) {
+                    echo "<ul class='can-ship'>
+                                        <li>$39.00 White Glove Delivery Within 50 Miles of Stores</li>
+                                        <li>$59.00 Delivery Via FedEx</li>
+                                        <li>Free In Store Pickup Plus Free Assembley</li>
+                                     </ul>";
+                    //echo "<span class='can-ship'>Shipping price is $59.00 OR free in store pickup  plus free assembley</span>";
+                } else if ($BoxDimension > 164) {
+                    echo "<ul class='can-ship'>
+                                        <li>$39.00 White Glove Delivery Within 50 Miles of Stores</li>
+                                        <li>$99.00 Curbside Delivery Via Truck</li>
+                                        <li>Free In Store Pickup Plus Free Assembley</li>
+                                     </ul>";
+                    //echo "<span class='can-ship'>Shipping price is $99.00 OR free in store pickup  plus free assembley</span>";
+                } else {
+                    echo "<span class='cannot-ship'>" . "Free In Store Pickup Plus Free Assembley" . "</span>";
+                }
+            } else {
+                echo "<ul class='can-ship'>
+                                    <li>$39.00 White Glove Delivery Within 50 Miles of Stores</li>
+                                    <li>$99.00 Curbside Delivery Via Truck</li>
+                                    <li>Free In Store Pickup Plus Free Assembley</li>
+                                </ul>";
+                //echo "<span class='can-ship'>Shipping price is $99.00 OR free in store pickup  plus free assembley</span>";
+            }
+        } else {
+            echo "<ul class='can-ship'>
+                                <li>Free In Store Pickup Plus Free Assembley</li>
+                            </ul>";
+            //echo "<span class='cannot-ship'>"."Free In Store Pickup  Plus Free Assembley"."</span>";
+        }
+        ?>
+        <?php /* ?>
+                    <div class="whyship">(?)
+                        <div class="whyshiptext shipping-chr-details">
+                            <p class="ship-dhead">Shipping Charges</p>
+                            <p><b>Product weight under 150 :</b><p>
+                            <p>Dimensions is under 130 shipping charge is free<p>
+                            <p>Dimensions is 130 to 164 shipping charge is 59.00<p>
+                            <p>Dimensions is over 164 shipping charge is 99.00<p>
+                            <p><b>Product weight above 150 :</b><p>
+                            <p>Product shipping charge is 99.00<p>
+                        </div>
+                    </div>
+                    <?php */ ?>
+    </div>
+</div>
