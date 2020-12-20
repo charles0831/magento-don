@@ -1,0 +1,8 @@
+{
+    "quote": {
+        "column": {
+            "iosc_subscribe": true,
+            "iosc_registered": true
+        }
+    }
+}

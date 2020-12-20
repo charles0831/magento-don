@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * OneStepCheckout
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to One Step Checkout AS software license.
+ *
+ * License is available through the world-wide-web at this URL:
+ * https://www.onestepcheckout.com/LICENSE.txt
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to mail@onestepcheckout.com so we can send you a copy immediately.
+ *
+ * @category   onestepcheckout
+ * @package    onestepcheckout_iosc
+ * @copyright  Copyright (c) 2017 OneStepCheckout  (https://www.onestepcheckout.com/)
+ * @license    https://www.onestepcheckout.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <onestepcheckout_iosc>
+            <general>
+                <enable>0</enable>
+                <serial></serial>
+            </general>
+            <shipping>
+                <defaultifone>flatrate_flatrate</defaultifone>
+                <freeifavailable>0</freeifavailable>
+                <hide>0</hide>
+            </shipping>
+            <payments>
+                <methods></methods>
+                <hide>0</hide>
+                <hide_nonnfree>0</hide_nonnfree>
+            </payments>
+            <billingfields>
+                <enable>0</enable>
+                <closed>0</closed>
+                <billingfields><![CDATA[{"_1490649978002_2":{"field_sort":"1","field_id":"prefix","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978005_5":{"field_sort":"2","field_id":"firstname","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1490649978007_7":{"field_sort":"3","field_id":"middlename","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978009_9":{"field_sort":"4","field_id":"lastname","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1490649978010_10":{"field_sort":"5","field_id":"suffix","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978018_18":{"field_sort":"6","field_id":"country_id","enabled":"1","required":"1","length":"1","css_class":"","default_value":"US"},"_1490649978020_20":{"field_sort":"7","field_id":"region","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1490649978015_15":{"field_sort":"8","field_id":"city","enabled":"1","required":"0","length":"1","css_class":"","default_value":""},"_1490649978022_22":{"field_sort":"9","field_id":"postcode","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1490649978025_25":{"field_sort":"10","field_id":"telephone","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1495116483899_899":{"field_sort":"11","field_id":"street.0","enabled":"1","required":"0","length":"3","css_class":"","default_value":""},"_1495116446936_936":{"field_sort":"12","field_id":"street.1","enabled":"1","required":"1","length":"3","css_class":"","default_value":""},"_1495116483900_900":{"field_sort":"13","field_id":"street.2","enabled":"1","required":"0","length":"3","css_class":"","default_value":""},"_1495116446937_937":{"field_sort":"14","field_id":"street.3","enabled":"1","required":"0","length":"3","css_class":"","default_value":""},"_1490649978012_12":{"field_sort":"15","field_id":"company","enabled":"1","required":"0","length":"1","css_class":"","default_value":""},"_1490649978027_27":{"field_sort":"16","field_id":"fax","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978029_29":{"field_sort":"17","field_id":"vat_id","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978030_30":{"field_sort":"18","field_id":"email","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978032_32":{"field_sort":"19","field_id":"dob","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978035_35":{"field_sort":"20","field_id":"taxvat","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978036_36":{"field_sort":"21","field_id":"gender","enabled":"0","required":"0","length":"0","css_class":"","default_value":""}}]]></billingfields>
+            </billingfields>
+            <shippingfields>
+                <shippingfields><![CDATA[{"_1490649978093_93":{"field_sort":"1","field_id":"prefix","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978096_96":{"field_sort":"2","field_id":"firstname","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1490649978097_97":{"field_sort":"3","field_id":"middlename","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978100_100":{"field_sort":"4","field_id":"lastname","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1490649978101_101":{"field_sort":"5","field_id":"suffix","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1495116447001_1":{"field_sort":"6","field_id":"street.0","enabled":"1","required":"1","length":"3","css_class":"","default_value":""},"_1495116483963_963":{"field_sort":"7","field_id":"street.1","enabled":"1","required":"0","length":"0","css_class":"","default_value":""},"_1495116483964_964":{"field_sort":"8","field_id":"street.2","enabled":"1","required":"0","length":"0","css_class":"","default_value":""},"_1495116447002_2":{"field_sort":"9","field_id":"street.3","enabled":"1","required":"1","length":"3","css_class":"","default_value":""},"_1490649978107_107":{"field_sort":"10","field_id":"country_id","enabled":"1","required":"1","length":"1","css_class":"","default_value":"US"},"_1490649978109_109":{"field_sort":"11","field_id":"region","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1490649978106_106":{"field_sort":"12","field_id":"city","enabled":"1","required":"0","length":"1","css_class":"","default_value":""},"_1490649978111_111":{"field_sort":"13","field_id":"postcode","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1490649978103_103":{"field_sort":"14","field_id":"company","enabled":"1","required":"0","length":"1","css_class":"","default_value":""},"_1490649978112_112":{"field_sort":"15","field_id":"telephone","enabled":"1","required":"1","length":"1","css_class":"","default_value":""},"_1490649978114_114":{"field_sort":"16","field_id":"fax","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978117_117":{"field_sort":"17","field_id":"vat_id","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978118_118":{"field_sort":"18","field_id":"email","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978120_120":{"field_sort":"19","field_id":"dob","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978122_122":{"field_sort":"20","field_id":"taxvat","enabled":"0","required":"0","length":"0","css_class":"","default_value":""},"_1490649978124_124":{"field_sort":"21","field_id":"gender","enabled":"0","required":"0","length":"0","css_class":"","default_value":""}}]]></shippingfields>
+            </shippingfields>
+            <registration>
+                <showlogin>0</showlogin>
+                <optional>0</optional>
+                <autoplace>0</autoplace>
+                <autoregister>0</autoregister>
+            </registration>
+            <terms>
+                <inmodal>0</inmodal>
+            </terms>
+            <ajax>
+                <onshipping>0</onshipping>
+            </ajax>
+            <gender>
+                <enabled>0</enabled>
+            </gender>
+            <dob>
+                <enabled>0</enabled>
+            </dob>
+            <comments>
+                <enabled>0</enabled>
+            </comments>
+            <email>
+                <enabled>0</enabled>
+            </email>
+            <subscribe>
+                <enable>0</enable>
+                <enableforreg>0</enableforreg>
+                <autoselect>0</autoselect>
+                <hidefromregandsubscribed>0</hidefromregandsubscribed>
+            </subscribe>
+        </onestepcheckout_iosc>
+    </default>
+</config>

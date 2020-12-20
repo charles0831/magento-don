@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * OneStepCheckout
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to One Step Checkout AS software license.
+ *
+ * License is available through the world-wide-web at this URL:
+ * https://www.onestepcheckout.com/LICENSE.txt
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to mail@onestepcheckout.com so we can send you a copy immediately.
+ *
+ * @category   onestepcheckout
+ * @package    onestepcheckout_iosc
+ * @copyright  Copyright (c) 2017 OneStepCheckout  (https://www.onestepcheckout.com/)
+ * @license    https://www.onestepcheckout.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Block\Onepage">
+        <arguments>
+            <argument name="layoutProcessors" xsi:type="array">
+                <!--
+                /**
+                  * default arguments are here cause you can't define order of aguments , we need to be after defaults
+                  * defining default arguments over ensures we get the right order
+                  * other solution would be to implement us as a plugin but this has a performance penalty
+                */
+                -->
+
+                <item name="addressFormAttributes" xsi:type="object">Magento\Checkout\Block\Checkout\LayoutProcessor</item>
+                <item name="totalsSortOrder" xsi:type="object">Magento\Checkout\Block\Checkout\TotalsProcessor</item>
+                <!--
+                /**
+                  * order is important and e-mail needs to be before layout
+                */
+                -->
+                <item name="iosc_EmailProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\EmailProcessor</item>
+                <item name="iosc_GenderProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\GenderProcessor</item>
+                <item name="iosc_DobProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\DobProcessor</item>
+                <item name="iosc_LayoutProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\LayoutProcessor</item>
+                <item name="iosc_BillingProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\BillingProcessor</item>
+                <item name="iosc_AuthProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\AuthProcessor</item>
+                <item name="iosc_DiscountProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\DiscountProcessor</item>
+                <item name="iosc_CommentProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\CommentProcessor</item>
+                <item name="iosc_SubscribeProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\SubscribeProcessor</item>
+                <item name="iosc_TermsProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\TermsProcessor</item>
+                <item name="iosc_ShippingProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\ShippingProcessor</item>
+                <item name="iosc_GiftregistryProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\GiftregistryProcessor</item>
+                <item name="iosc_AmazonPayProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\AmazonPayProcessor</item>
+                <item name="iosc_BraintreeProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\BraintreeProcessor</item>
+                <item name="iosc_SidebarProcessor" xsi:type="object">Onestepcheckout\Iosc\Block\Frontend\LayoutProcessors\SidebarProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="iosc_PaymentProvider" xsi:type="object">Onestepcheckout\Iosc\Model\PaymentConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * OneStepCheckout
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to One Step Checkout AS software license.
+ *
+ * License is available through the world-wide-web at this URL:
+ * https://www.onestepcheckout.com/LICENSE.txt
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to mail@onestepcheckout.com so we can send you a copy immediately.
+ *
+ * @category   onestepcheckout
+ * @package    onestepcheckout_iosc
+ * @copyright  Copyright (c) 2017 OneStepCheckout  (https://www.onestepcheckout.com/)
+ * @license    https://www.onestepcheckout.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_quote_collect_totals_before">
+        <observer name="iosc_set_defaults" instance="Onestepcheckout\Iosc\Observer\Frontend\Setdefaults" />
+    </event>
+    <event name="customer_login">
+        <observer name="iosc_customer_login_observer" instance="Onestepcheckout\Iosc\Observer\Frontend\Setlogindefaults" />
+    </event>
+    <event name="layout_load_before">
+        <observer name="onestepcheckout_iosc_layout_load_before" instance="Onestepcheckout\Iosc\Observer\Frontend\LayoutHandler" />
+    </event>
+</config>

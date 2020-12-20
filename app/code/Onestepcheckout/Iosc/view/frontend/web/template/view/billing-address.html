@@ -1,0 +1,10 @@
+<div id="iosc-billing-container" class="checkout-shipping-address" data-bind="visible: formObjects() !== false">
+    <div id="iosc_billingaddress" class="billing-address-same-as-shipping-block field choice" data-bind="visible: formObjects() !== false && !quote.isVirtual()">
+        <input type="checkbox" name="billing-address-same-as-shipping" data-bind="checked: isUseBillingAddress, click: showBillingAddress, attr: {id: 'billing-address-same-as-shipping-'}"/>
+        <label data-bind="attr: {for: 'billing-address-same-as-shipping-'}"><span data-bind="i18n: 'I have a different billing address'"></span></label>
+    </div>
+    <div class="iosc-billing-wrapper" data-bind="visible: isUseBillingAddress">
+        <div class="step-title" data-bind="i18n: 'Billing Address'" data-role="title"></div>
+        <div id="rendermethis"></div>
+    </div>
+</div>

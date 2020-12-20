@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * OneStepCheckout
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to One Step Checkout AS software license.
+ *
+ * License is available through the world-wide-web at this URL:
+ * https://www.onestepcheckout.com/LICENSE.txt
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to mail@onestepcheckout.com so we can send you a copy immediately.
+ *
+ * @category   onestepcheckout
+ * @package    onestepcheckout_iosc
+ * @copyright  Copyright (c) 2017 OneStepCheckout  (https://www.onestepcheckout.com/)
+ * @license    https://www.onestepcheckout.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/App/etc/routes.xsd">
+    <router id="standard">
+        <route id="onestepcheckout_iosc" frontName="onestepcheckout_iosc">
+            <module name="Onestepcheckout_Iosc"/>
+        </route>
+        <route id="checkout">
+            <module name="Onestepcheckout_Iosc" after="Magento_Checkout"/>
+        </route>
+    </router>
+</config>

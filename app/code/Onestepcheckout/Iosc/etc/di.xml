@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * OneStepCheckout
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to One Step Checkout AS software license.
+ *
+ * License is available through the world-wide-web at this URL:
+ * https://www.onestepcheckout.com/LICENSE.txt
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to mail@onestepcheckout.com so we can send you a copy immediately.
+ *
+ * @category   onestepcheckout
+ * @package    onestepcheckout_iosc
+ * @copyright  Copyright (c) 2017 OneStepCheckout  (https://www.onestepcheckout.com/)
+ * @license    https://www.onestepcheckout.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Defining output managers = methods that process posted data -->
+    <preference for="Onestepcheckout\Iosc\Api\OutputManagementInterface" type="Onestepcheckout\Iosc\Model\Output\OutputManagementInterface"/>
+    <type name="Onestepcheckout\Iosc\Model\DataManager">
+        <arguments>
+            <argument name="outputs" xsi:type="array">
+                <item name="Onestepcheckout_Iosc_Model_Output_CustomerEmail" xsi:type="object">Onestepcheckout\Iosc\Model\Output\Email</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_BillingAddress" xsi:type="object">Onestepcheckout\Iosc\Model\Output\BillingAddress</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_ShippingAddress" xsi:type="object">Onestepcheckout\Iosc\Model\Output\ShippingAddress</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_PaymentMethod" xsi:type="object">Onestepcheckout\Iosc\Model\Output\PaymentMethod</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_ShippingMethod" xsi:type="object">Onestepcheckout\Iosc\Model\Output\ShippingMethod</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_SelectedShippingMethod" xsi:type="object">Onestepcheckout\Iosc\Model\Output\SelectedShippingMethod</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_Couopn" xsi:type="object">Onestepcheckout\Iosc\Model\Output\Coupon</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_CustomerNote" xsi:type="object">Onestepcheckout\Iosc\Model\Output\Comment</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_Subscribe" xsi:type="object">Onestepcheckout\Iosc\Model\Output\Subscribe</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_Registration" xsi:type="object">Onestepcheckout\Iosc\Model\Output\Registration</item>
+                <item name="Onestepcheckout_Iosc_Model_Output_Totals" xsi:type="object">Onestepcheckout\Iosc\Model\Output\Totals</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Plugin to place order functionality and satisfy object/data dependencies  -->
+    <type name="\Magento\Checkout\Api\GuestPaymentInformationManagementInterface">
+        <plugin name="Onestepcheckout_Iosc_GuestSaveManager" type="Onestepcheckout\Iosc\Plugin\GuestSaveManager"/>
+    </type>
+    <type name="\Magento\Checkout\Api\PaymentInformationManagementInterface">
+        <plugin name="Onestepcheckout_Iosc_SaveManager" type="Onestepcheckout\Iosc\Plugin\SaveManager"/>
+    </type>
+    <type name="\Magento\Quote\Api\GuestBillingAddressManagementInterface">
+        <plugin name="Onestepcheckout_Iosc_SaveManager" type="Onestepcheckout\Iosc\Plugin\GuestBillingSaveManager"/>
+    </type>
+    <type name="\Magento\Checkout\Api\GuestShippingInformationManagementInterface">
+        <plugin name="Onestepcheckout_Iosc_SaveManager" type="Onestepcheckout\Iosc\Plugin\GuestShippingSaveManager"/>
+    </type>
+
+    <!-- plugin to generated extensionInterface to grab and set values to actual objects -->
+    <type name="\Magento\Quote\Api\Data\AddressExtensionInterface">
+        <plugin name="Onestepcheckout_Iosc_GenderManager" type="Onestepcheckout\Iosc\Plugin\GenderManager"/>
+    </type>
+    <type name="\Magento\Quote\Api\Data\AddressExtensionInterface">
+        <plugin name="Onestepcheckout_Iosc_DobManager" type="Onestepcheckout\Iosc\Plugin\DobManager"/>
+    </type>
+
+     <!-- plugin to change new registration e-mail if needed -->
+    <type name="\Magento\Customer\Model\EmailNotificationInterface">
+        <plugin name="Onestepcheckout_Iosc_EmailNotification" type="Onestepcheckout\Iosc\Plugin\EmailNotification"/>
+    </type>
+
+    <!-- plugin to persist shipping choices made on cart totals estimator page -->
+    <type name="\Magento\Checkout\Api\TotalsInformationManagementInterface">
+        <plugin name="Onestepcheckout_Iosc_TotalsInformationManagementInterface" type="Onestepcheckout\Iosc\Plugin\TotalsInformationManagementInterface"/>
+    </type>
+
+</config>

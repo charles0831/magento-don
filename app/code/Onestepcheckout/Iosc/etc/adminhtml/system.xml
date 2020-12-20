@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * OneStepCheckout
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to One Step Checkout AS software license.
+ *
+ * License is available through the world-wide-web at this URL:
+ * https://www.onestepcheckout.com/LICENSE.txt
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to mail@onestepcheckout.com so we can send you a copy immediately.
+ *
+ * @category   onestepcheckout
+ * @package    onestepcheckout_iosc
+ * @copyright  Copyright (c) 2017 OneStepCheckout  (https://www.onestepcheckout.com/)
+ * @license    https://www.onestepcheckout.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="onestepcheckout_iosc" translate="label" type="text" sortOrder="306" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>OneStepCheckout</label>
+            <tab>sales</tab>
+            <resource>Onestepcheckout_Iosc::onestepcheckout_iosc</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>OneStepCheckout settings</label>
+                <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                <field id="version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Version information</label>
+                    <frontend_model>Onestepcheckout\Iosc\Block\Adminhtml\System\Config\Form\Field\Version</frontend_model>
+                </field>
+                <field id="enable" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable OneStepCheckout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+               <!-- field id="serial" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Serial key</label>
+               </field -->
+            </group>
+            <group id="shipping" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Shipping method defaults</label>
+                <field id="default" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select default shipping method</label>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allmethods</source_model>
+                    <comment><![CDATA[Note: adding a default shipping method is possible only before quote is calculated, some shipping methods might need quote information to be already available and thus can't be selected as defaults. This mostly affects tablerate based or similar shipping method extensions]]></comment>
+                </field>
+                <field id="defaultifone" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select shipping method if only one available</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="freeifavailable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Free shipping method if available</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <!-- field id="hide" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide shipping methods</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field -->
+            </group>
+            <group id="payments" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Payment method defaults</label>
+                <field id="methods" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Payment Method</label>
+                    <source_model>Onestepcheckout\Iosc\Model\Config\Source\Paymentmethods</source_model>
+                </field>
+                <!-- field id="hide" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide payment method section</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field-->
+                <field id="hide_nonnfree" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide non-free payment methods for zero value order</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="billingfields" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Billing address fields and settings</label>
+                <comment>
+                    <![CDATA[
+                        <b>Note:</b>
+                        <ul style="width: 80%">
+                            <li>Any customer object or objects with separate configuration (like street fields count, gender etc) need to be enabled/configured from Magento settings: stores > configuration > customer configuration first.</li>
+                            <li>Fields you can edit (like some street fields) are not required or enabled from magento configuration</li>
+                            <li>ADD button is not meant for adding new fields to checkout address forms but rather to include 3rd party objects to OneStepCheckout configuration, this goes by uiComponent name/id</li>
+                            </ul>]]></comment>
+                <field id="billingfields" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Billing Fields</label>
+                    <frontend_model>Onestepcheckout\Iosc\Block\Adminhtml\System\Config\Form\Field\Fields</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <!-- field id="enable" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable different billing address</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="closed" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide/Close different billing address</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="separatestreetfields" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Explode address rows</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When enabled address fields are ungrouped and can be managed separately (commonly used to mimic house nr, apt nr etc)</comment>
+                </field -->
+            </group>
+            <group id="shippingfields" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Shipping address fields and settings</label>
+                <comment>
+                    <![CDATA[
+                        <b>Note:</b>
+                        <ul style="width: 80%">
+                            <li>Any customer object or objects with separate configuration (like street fields count, gender etc) need to be enabled/configured from Magento settings: stores > configuration > customer configuration first.</li>
+                            <li>Fields you can edit (like some street fields) are not required or enabled from magento configuration</li>
+                            <li>ADD button is not meant for adding new fields to checkout address forms but rather to include 3rd party objects to OneStepCheckout configuration, this goes by uiComponent name/id</li>
+                            </ul>]]></comment>
+                <field id="shippingfields" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shipping Fields</label>
+                    <frontend_model>Onestepcheckout\Iosc\Block\Adminhtml\System\Config\Form\Field\Fields</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <field id="separatestreetfields" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Explode address rows</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When enabled address fields are ungrouped and can be managed separately (commonly used to mimic house nr, apt nr etc)</comment>
+                </field>
+                <!-- field id="separateemail" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merge E-mail field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When enabled e-mail address becomes manageable like other fields</comment>
+                </field -->
+            </group>
+            <group id="geoip" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Maxmind GeoIP2 location detection</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable GeoIP2 location detection</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="dbpath" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>GeoIP2 database path</label>
+                    <comment><![CDATA[relative (from magento root) path to GeoIP2 (city and country databases are supported) database on your server. You can get it from http://dev.maxmind.com/geoip/geoip2/geolite2/]]></comment>
+                </field>
+                <field id="trustproxy" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Trust Proxy IP address</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[If your servers is behind a proxy (varnish, squid etc) then getting real client IP address can fail and address data needs to be aquired from different variables that can be faked (HTTP_VIA, HTTP_X_FORWARDED_FOR). Using those inside OneStepCheckout is safe but be warned if you relay on ip address data to be valid.]]></comment>
+                </field>
+            </group>
+            <group id="registration" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Registration modes</label>
+                <field id="showlogin" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show "Sign in or register" link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="optionalpwd" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show optional password field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[If enabled customer e-mail is validated  with ajax call and optional password fields are offered for guests, login option offered for existing customers]]></comment>
+                </field>
+                <field id="registeronsuccess" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Register on success page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Allows disabling of default success page registration feature. If disabled no registration options are displayed on success page]]></comment>
+                </field>
+                <field id="autoplace" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Auto-place orders on accounts</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Registered users placing orders as guest will get those orders tied to their actual account]]></comment>
+                </field>
+                <field id="autoregister" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Automatically register new clients</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[On checkout, customer with email which is not jet registered on your site will be automatically registered and order tied to that account]]></comment>
+                </field>
+                <field id="skipemail" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable welcome e-mail</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[If enabled no welcome e-mail is sent to automatically registered customers, allows silent registration. Works together with "Automatically register new clients" option (set to Yes)]]></comment>
+                </field>
+            </group>
+            <group id="discount" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Discount code field</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable discount field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="comments" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer comments field</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable comments </label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="subscribe" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Newsletter subscription</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable subscribe checkbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="autoselect" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Checbox selected by default</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enableforreg" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable for logged in users</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="hidefromregandsubscribed" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide from logged in user if e-mail is already subscribed</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+             <!--
+            <group id="terms" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Terms and conditions</label>
+                <field id="inmodal" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display terms and conditions in modal window</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="totals" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Summary block options</label>
+                <field id="hiderows" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide some random rows from summary</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="feedback" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Order comment and feedback fields</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable OneStepCheckout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="deliverydate" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Delivery date and note</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable OneStepCheckout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="cartskip" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Skip cart (direct checkout)</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable OneStepCheckout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="googleanalytics" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Advanced Google Analytics setup</label>
+                <field id="enable" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable OneStepCheckout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="extraitems" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Extra items (gift wrap, rush delivery, free addons etc)</label>
+                <field id="enable" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable OneStepCheckout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="postcodelookup" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Postcode finder setup (google places, local apis)</label>
+                <field id="enable" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable OneStepCheckout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="google_place_address_autocomplete" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google Place Address Autocomplete</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Google Place Address Autocomplete</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="google_maps_javascript_api_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Maps JavaScript API Key</label>
+                </field>
+            </group>
+ -->
+
+        </section>
+    </system>
+</config>

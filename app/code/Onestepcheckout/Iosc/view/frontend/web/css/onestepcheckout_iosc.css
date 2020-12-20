@@ -1,0 +1,631 @@
+.shipping-information,
+.payment-method-billing-address,
+.actions-toolbar,
+#checkout > div.opc-estimated-wrapper > div.minicart-wrapper > button,
+.field-tooltip,
+aside.opc-sidebar,
+.opc-estimated-wrapper,
+#checkout-step-shipping button.action-show-popup {
+    display: none;
+}
+
+.opc-progress-bar {
+    display: none !important;
+}
+
+/*additions to defaut styleset*/
+#customer-email-fieldset  .actions-toolbar {
+    display: block;
+    margin-top: 10px;
+}
+#customer-email-fieldset  .hidden-fields {
+    margin-top: 10px;
+}
+
+div.checkout-shipping-method div.message.notice {
+    margin-top: 10px;
+}
+
+.checkout-payment-method .checkout-billing-address {
+    display: none;
+}
+
+.opc-wrapper {
+    float: left;
+    padding-right: 0px !important;
+    width: 100%;
+}
+.opc-block-summary .minicart-items-wrapper {
+    max-height: none;
+}
+.minicart-items-wrapper {
+    overflow-x: initial;
+}
+/* common css for all */
+
+.iosc-third, .iosc-half, .iosc-quarter, .iosc-whole {
+    float: left;
+    display: inline-block;
+}
+.iosc-whole {
+    width: calc(100% - 8px);
+}
+.iosc-start.iosc-third,
+.iosc-between.iosc-third,
+.iosc-end.iosc-third {
+    width: calc(75% - 8px);
+}
+.iosc-start.iosc-half,
+.iosc-between.iosc-half,
+.iosc-end.iosc-half {
+    width: calc(50% - 8px);
+}
+.iosc-start.iosc-quarter,
+.iosc-between.iosc-quarter,
+.iosc-end.iosc-quarter {
+    width: calc(25% - 8px);
+}
+.iosc-start {
+    margin-right: 8px !important;
+}
+.iosc-between {
+    margin-right: 8px !important;
+}
+.iosc-break {
+    clear: both !important;
+}
+#co-shipping-form {
+    overflow: auto;
+}
+
+.control select {
+    padding: 4px 27px 4px 4px;
+}
+table.table-checkout-shipping-method {
+    width: 100%;
+}
+
+.field .control._with-tooltip input {
+    margin-right: 0;
+    width: 100%;
+}
+
+.opc-wrapper .step-content {
+    margin: 0 0 10px;
+}
+
+.opc-wrapper ol li {
+    width: 48%;
+}
+
+.opc-wrapper #shipping,
+.opc-wrapper #iosc-billing {
+    float: left;
+}
+
+.opc-wrapper #opc-shipping_method,
+.opc-wrapper #payment {
+    float: right;
+}
+
+#payment,
+#shipping,
+#opc-shipping_method {
+    display: inline-block ;
+}
+
+#iosc-billing-container {
+    clear: both;
+}
+#iosc_billingaddress {
+    margin-bottom: 15px;
+}
+
+#iosc-billing-container div.choice {
+    clear: both;
+}
+
+.shipping-address-item {
+    width: 100% !important;
+    padding: 5px 35px 5px 10px !important;
+    margin: 2px 0px 0px 0px !important;
+}
+
+.shipping-address-item.not-selected-item{
+     border: 1px solid #ccc;
+}
+
+.shipping-address-item.not-selected-item:hover {
+    background: #f4f4f4;
+    cursor: pointer;
+}
+.shipping-address-items {
+    padding: 8px 0px 10px 0px;
+}
+
+.shipping-address-item:before {
+    background: inherit !important;
+}
+.opc-wrapper .form-shipping-address {
+    margin: 15px 0px 0px 0px;
+}
+
+.newaddress-button-title,
+.discount-code .payment-option-title,
+.iosc-comment .iosc-comment-title {
+    padding: 10px 0 10px 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.newaddress-button-title .action-toggle,
+.discount-code .payment-option-title  .action-toggle,
+.iosc-comment .iosc-comment-title .action-toggle {
+    color: #1979c3;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.newaddress-button-title .action-toggle:hover:after,
+.discount-code .payment-option-title .action-toggle:hover:after,
+.iosc-comment .iosc-comment-title .action-toggle:hover:after {
+    color: #333333;
+}
+
+.newaddress-button-title .action-toggle:after,
+.discount-code .payment-option-title .action-toggle:after,
+.iosc-comment .iosc-comment-title .action-toggle:after {
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    line-height: 16px;
+    color: #8f8f8f;
+    content: '\e622';
+    font-family: 'luma-icons';
+    margin: 0 0 0 10px;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+}
+
+.newaddress-button._active .newaddress-button-title .action-toggle:after,
+.discount-code._active .payment-option-title .action-toggle:after
+.iosc-comment._active .iosc-comment-title .action-toggle:after {
+    content: '\e621';
+    color: #333333;
+}
+.cart-discount .block.active > .title:after {
+    content: '\e621';
+}
+.newaddress-save-button-container{
+    margin: 10px 0 15px 0;
+}
+.discount-code,
+.iosc-comment,
+.iosc-subscribe {
+    margin: 0px 0 25px 0;
+    padding: 0px 15px;
+    overflow: auto;
+}
+.iosc-subscribe label {
+    float: left;
+    width: 90%;
+}
+.iosc-subscribe input {
+    float: left;
+}
+
+.discount-code label {
+    display: none;
+}
+
+#discount-form {
+    display: block;
+    overflow: auto;
+}
+
+.discount-code .payment-option-inner {
+    display: inline-block;
+    float: left;
+    width: 65%;
+}
+.discount-code .actions-toolbar {
+    display: inline-block;
+    float: right;
+    width: 32%;
+}
+.discount-code .actions-toolbar button {
+    margin: 0 !important;
+}
+/* replaced min-width 500px */
+.table-checkout-shipping-method {
+    min-width: inherit !important;
+}
+
+.authentication-wrapper .actions-toolbar {
+    display: inline-block;
+}
+
+.authentication-wrapper .fieldset {
+    margin: 0 0 20px;
+}
+
+.authentication-wrapper .actions-toolbar div {
+    display: block !important;
+    float: none !important;
+    text-align: left !important;
+}
+.block-authentication .action.action-login {
+    padding: 6px 15px !important;
+    font-size: inherit !important;
+}
+
+.opc-wrapper .form-login {
+    border: none !important;
+    padding: 0 !important;
+    margin: 20px 0 0 0;
+}
+.opc-wrapper #customer-email-fieldset div.field {
+    width: calc(100% - 8px);
+    margin-bottom: 0;
+}
+
+/* EOF Common css for all */
+
+/* payment methods */
+.payment-method-content {
+    padding: 0 !important;
+}
+
+.payment-method-content .checkout-agreements-block {
+    margin: 0 !important;
+}
+
+.payment-method-content p {
+    margin: 0 !important;
+}
+
+.checkout-payment-method .credit-card-types .item {
+    float: left;
+    width: auto;
+}
+
+/* totals */
+div#iosc-summary {
+    width: 31%;
+    float: right;
+}
+div#iosc-summary span.step-title {
+    padding: 0px 0px 10px 38px;
+    color: #333;
+    font-weight: 300;
+    font-size: 2.6rem;
+    display: inline-block;
+    position: relative;
+}
+div.step-title {
+    position: relative;
+    padding: 0px 0px 15px 38px;
+}
+
+#shipping.checkout-shipping-address .field-select-billing div.step-title {
+    padding: 0px 0px 10px 0px;
+}
+.checkout-payment-method .step-title {
+    border-bottom: 1px solid #ccc;
+}
+.title-number {
+    margin: 4px 0px 0px -38px;
+    position: absolute;
+    border-radius: 50%;
+    width: 28px;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fda085;
+    display: inline-block;
+    border: 1px solid #b6b6b6;
+    background-image: -webkit-linear-gradient(30deg, #fdfbfb 0%, #ebedee 100%);
+    background-image: -moz-linear-gradient(30deg, #fdfbfb 0%, #ebedee 100%);
+    background-image: -o-linear-gradient(30deg, #fdfbfb 0%, #ebedee 100%);
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14), 0 1px 12px 0 rgba(0,0,0,0.18), 0 1px 3px -1px rgba(0,0,0,0.1);
+}
+.title-number span {
+    text-align: center;
+    line-height: 28px;
+    display: block;
+}
+
+.table-checkout-shipping-method tbody td:first-child,
+div.payment-method-title.field.choice {
+    padding-left: 9px;
+}
+
+.opc-block-summary,
+.product-image-wrapper img {
+    border-radius: 5px;
+}
+
+.opc-block-summary {
+    padding: 15px;
+}
+
+.block.items-in-cart {
+    margin-bottom: 10px !important;
+}
+.opc-block-summary .table-totals tbody tr:last-child td {
+    padding-bottom: 0 !important;
+}
+.opc-block-summary .table-totals .grand td, .opc-block-summary .table-totals .grand th {
+    padding: 10px 0 0 0 !important;
+}
+
+.opc-sidebar {
+    margin-top: 0 !important;
+}
+div.checkout-agreements {
+    margin: 0 0 25px 0;
+    overflow: auto;
+}
+div.checkout-agreement {
+    margin: 0 0 3px 0;
+    padding: 0 0 0 15px;
+    overflow: auto;
+}
+div.checkout-agreement input {
+    float: left;
+}
+div.checkout-agreement label {
+    float: left;
+    width: 90%;
+}
+div.checkout-agreement button {
+    border: none;
+    background: none;
+    box-shadow: none;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    border-radius: initial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #1979c3;
+    text-align: left;
+}
+div.iosc-place-order-container button.iosc-place-order-button {
+    padding: 13px 35px;
+    color: #fff;
+    width: 92%;
+    border-radius: 6px;
+    background: #f18200;
+    border: 1px solid #f18200;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.0rem;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(0deg, #f18200 0%, #ff9a44 100%);
+}
+.iosc-place-order-container {
+    text-align: center;
+}
+.action.primary.iosc-place-order-button:hover,
+.action.primary.iosc-place-order-button:active,
+.action.primary.iosc-place-order-button:focus {
+    background: #FFA336;
+    border: 1px solid #FFA336;
+    background-image: none;
+}
+
+.opc-wrapper .fieldset > .field.required > label,
+.opc-wrapper .fieldset > .field._required > label,
+.fieldset > .field:not(.choice) > .label {
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+    float: none;
+    text-align: left;
+    width: initial !important;
+    margin: 0 0 8px;
+}
+
+.iosc-billing-wrapper .field-select-billing .label {
+    display: none;
+}
+
+.fieldset > .field:not(.choice) > .control {
+    float: none !important;
+    width: initial !important;
+    overflow: auto;
+}
+
+.fieldset > .field {
+    margin-bottom: 20px !important;
+}
+
+.opc-wrapper .fieldset > .field.required > label:after, .opc-wrapper .fieldset > .field._required > label:after {
+    margin-left: 0px !important;
+    position: unset !important;
+}
+
+.fieldset > .field.choice:before, .fieldset > .field.no-label:before {
+    width: unset !important;
+}
+
+input._has-datepicker {
+    margin-right: 5px;
+    width: calc(100% - 28px) !important;
+}
+
+.iosc-registration {
+    padding: 0px 4px 0px 10px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 3px;
+    background: rgb(245, 245, 245);
+    width: calc(100% - 24px);
+    background: #f4f4f4; /* Old browsers */
+    background: -moz-linear-gradient(top, #f4f4f4 0%, #f5f5f5 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f4f4f4 0%,#f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f4f4f4 0%,#f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+}
+
+.iosc-registration .password-toggle {
+    padding: 8px 0px 8px 0px;
+}
+
+.iosc-registration .password-fields {
+    padding: 15px 1px 5px 1px;
+}
+
+.iframe-payment-modal .action-close {
+    display: none !important;
+}
+.iframe-payment-modal .iframe-container {
+    position: relative;
+    width: 100% !important;
+    height: 100%  !important;
+    overflow: auto;
+}
+.iframe-payment-modal iframe {
+    width: 100% !important;
+    height: 125% !important;
+}
+
+.iframe-payment-modal .modal-content {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+/* shipping policy block */
+div.shipping-policy-block.field-tooltip {
+    display: inline-block;
+    position: relative;
+    padding: 0px 0px 10px 40px;
+    left: auto;
+    top: auto;
+}
+
+.shipping-policy-block.field-tooltip .field-tooltip-content:before,
+.shipping-policy-block.field-tooltip .field-tooltip-content:after,
+.shipping-policy-block.field-tooltip .field-tooltip-content {
+    right: auto;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 780px) and (orientation: landscape) {
+
+    }
+@media only screen and (max-width: 401px) {
+    .iosc-third, .iosc-half, .iosc-quarter, .iosc-whole {
+        float: none;
+        display: block;
+    }
+    .iosc-whole {
+        width: 100%;
+    }
+    .iosc-start.iosc-third,
+    .iosc-between.iosc-third,
+    .iosc-end.iosc-third {
+        width: 100%;
+    }
+    .iosc-start.iosc-half,
+    .iosc-between.iosc-half,
+    .iosc-end.iosc-half {
+        width: 100%;
+    }
+    .iosc-start.iosc-quarter,
+    .iosc-between.iosc-quarter,
+    .iosc-end.iosc-quarter {
+        width: 100%;
+    }
+    .opc-wrapper #customer-email-fieldset div.field {
+        width: 100%;
+    }
+    .iosc-start {
+        margin-right: 0px !important;
+    }
+    .iosc-between {
+        margin-right: 0px !important;
+    }
+    .table-checkout-shipping-method tbody td:first-child, div.payment-method-title.field.choice {
+        padding-left: 0px;
+    }
+    .step-title {
+        font-weight: 300;
+        font-size: 2.6rem;
+        display: block;
+        padding-bottom: 10px;
+    }
+    .checkout-payment-method .step-title {
+        border-bottom: none;
+    }
+}
+@media only screen and (max-width: 639px) {
+    .opc-wrapper .form-login, .opc-wrapper .form-shipping-address, .opc-wrapper .methods-shipping  {
+        background: #ffffff;
+    }
+    .opc-wrapper .form-login, .opc-wrapper .form-shipping-address, .opc-wrapper .methods-shipping {
+        padding: 0;
+    }
+    .opc-wrapper .form-login+.form-shipping-address {
+        margin-top: 10px;
+    }
+    .step-title {
+        font-weight: 300 !important;
+        font-size: 2.6rem !important;
+        padding-bottom: 10px !important;
+        display: block;
+        border-bottom: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    div#iosc-summary {
+        width: 100%;
+        clear: both;
+    }
+    #payment, #shipping, #opc-shipping_method, #iosc-billing {
+        clear: both;
+        width: 100%;
+        float: none;
+    }
+    #payment {
+        display: block !important;
+    }
+    .checkout-payment-method .payment-methods {
+        margin: 0;
+    }
+    .opc-wrapper .methods-shipping {
+       padding: 0;
+       margin: 0;
+    }
+    input[type="radio"] {
+        margin: 2px 4px 0 1px;
+    }
+    .checkout-payment-method .step-title {
+        padding-left: 38px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+@media all and (min-width: 640px) {
+
+}
+
+@media only screen and (min-device-width: 320px) {
+
+}
+
+@media only screen and (min-device-width: 768px) {
+
+}
+
+@media only screen and (min-device-width: 1024px) {
+
+}

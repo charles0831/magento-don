@@ -1,0 +1,206 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Onestepcheckout_Iosc::css/onestepcheckout_iosc.css" />
+    </head>
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="iosc-billing-fields" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/billingfields</item>
+                                                    <item name="displayArea" xsi:type="string">steps</item>
+                                                    <item name="sortOrder" xsi:type="string">900</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template" xsi:type="string">Onestepcheckout_Iosc/view/billing-address</item>
+                                                    </item>
+                                                </item>
+
+                                                <!-- Declare the component that renders the shipping address -->
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="before-shipping-method-form" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="iosc_shipping_validationmessage" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/view/validation-message</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="template" xsi:type="string">Onestepcheckout_Iosc/view/validation_message</item>
+                                                                        <item name="dataScope" xsi:type="string">data</item>
+                                                                        <item name="namespace" xsi:type="string">whatever</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="address-list" xsi:type="array">
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="rendererTemplates" xsi:type="array">
+                                                                    <item name="customer-address" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/view/shipping-address/address-renderer/osc</item>
+                                                                    </item>
+                                                                    <item name="new-customer-address" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/view/shipping-address/address-renderer/osc</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="iosc-shippingaddress-button" xsi:type="array">
+                                                            <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/view/shipping-address/button</item>
+                                                            <item name="displayArea" xsi:type="string">address-list-additional-addresses</item>
+                                                            <item name="sortOrder" xsi:type="string">900</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="template" xsi:type="string">Onestepcheckout_Iosc/view/shipping-address/toggle-new-address-button</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="afterMethods" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="iosc-payment-validationmessage" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/view/validation-message</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="template" xsi:type="string">Onestepcheckout_Iosc/view/validation_message</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="discount" xsi:type="array">
+                                            <item name="displayArea" xsi:type="string">summary</item>
+                                            <item name="sortOrder" xsi:type="string">880</item>
+                                        </item>
+                                        <item name="comments" xsi:type="array">
+                                            <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/comments</item>
+                                            <item name="displayArea" xsi:type="string">summary</item>
+                                            <item name="sortOrder" xsi:type="string">885</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template" xsi:type="string">Onestepcheckout_Iosc/view/comment</item>
+                                            </item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="iosc-comment" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/textarea</item>
+                                                    <item name="inputName" xsi:type="string">iosccomment</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                        <item name="elementTmpl" xsi:type="string">ui/form/element/textarea</item>
+                                                        <item name="rows" xsi:type="string">3</item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="subscribe" xsi:type="array">
+                                            <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/subscribe</item>
+                                            <item name="displayArea" xsi:type="string">summary</item>
+                                            <item name="sortOrder" xsi:type="string">886</item>
+                                            <item name="dataScope" xsi:type="string">iosc.subscribeToNewsletter</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template" xsi:type="string">Onestepcheckout_Iosc/view/subscribe</item>
+                                            </item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="iosc-subscribe" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/boolean</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template" xsi:type="string">ui/form/element/checkbox</item>
+                                                        <item name="elementTmpl" xsi:type="string">ui/form/element/checkbox</item>
+                                                        <item name="additionalClasses" xsi:type="string">iosc-subscribe</item>
+                                                        <item name="label" xsi:type="string"  translate="true">Subscribe to newsletter</item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="registration-fields" xsi:type="array">
+                                            <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/registration-fields</item>
+                                            <item name="displayArea" xsi:type="string">summary</item>
+                                            <item name="sortOrder" xsi:type="string">886</item>
+                                            <item name="dataScope" xsi:type="string">iosc</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template" xsi:type="string">Onestepcheckout_Iosc/view/registration</item>
+                                            </item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="iosc-register-pwd" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                    <item name="dataScope" xsi:type="string">registration.iosc-register-pwd</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                        <item name="elementTmpl" xsi:type="string">ui/form/element/password</item>
+                                                        <item name="additionalClasses" xsi:type="string">iosc-register-pwd</item>
+                                                        <item name="label" xsi:type="string"  translate="true">Password</item>
+                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                        <item name="deps" xsi:type="array">
+                                                            <item name="0" xsi:type="string">checkoutProvider</item>
+                                                        </item>
+                                                        <item name="validation" xsi:type="array">
+                                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                                            <item name="validate-customer-password" xsi:type="boolean">true</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                                <item name="iosc-register-pwd-confirm" xsi:type="array">
+                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                    <item name="dataScope" xsi:type="string">registration.iosc-register-pwd-confirm</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                        <item name="elementTmpl" xsi:type="string">ui/form/element/password</item>
+                                                        <item name="additionalClasses" xsi:type="string">iosc-register-pwd-confirm</item>
+                                                        <item name="label" xsi:type="string"  translate="true">Confirm Password</item>
+                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                        <item name="deps" xsi:type="array">
+                                                            <item name="0" xsi:type="string">checkoutProvider</item>
+                                                        </item>
+                                                        <item name="validation" xsi:type="array">
+                                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                                            <item name="equalTo" xsi:type="string">.iosc-register-pwd input</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="agreements" xsi:type="array">
+                                            <item name="displayArea" xsi:type="string">summary</item>
+                                            <item name="sortOrder" xsi:type="string">890</item>
+                                        </item>
+                                        <item name="iosc-place-order-button" xsi:type="array">
+                                            <item name="component" xsi:type="string">Onestepcheckout_Iosc/js/view/placeorder</item>
+                                            <item name="displayArea" xsi:type="string">summary</item>
+                                            <item name="sortOrder" xsi:type="string">900</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template" xsi:type="string">Onestepcheckout_Iosc/view/place_order</item>
+                                            </item>
+                                        </item>
+                                        <item name="summary" xsi:type="array">
+                                            <item name="sortOrder" xsi:type="string">10</item>
+                                        </item>
+                                    </item>
+                                </item>
+                                <item name="iosc" xsi:type="array">
+                                    <item name="component" xsi:type="string">uiComponent</item>
+                                    <item name="sortOrder" xsi:type="string">1000</item>
+                                    <item name="children" xsi:type="array"></item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+
+</page>

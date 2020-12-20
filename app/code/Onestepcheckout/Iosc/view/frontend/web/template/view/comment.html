@@ -1,0 +1,14 @@
+<div id="iosc-comment" class="fieldset _collapsible iosc-comment" data-bind="mageInit: {'collapsible':{'openedState': '_active', active: true}}">
+    <div class="iosc-comment-title choice" data-role="title">
+        <span class="action action-toggle" id="iosc-comment-heading" role="heading" aria-level="2">
+            <!-- ko i18n: 'Order Comment'--><!-- /ko -->
+        </span>
+    </div>
+    <div class="iosc-comment-content" data-role="content">
+    <!-- ko foreach: {data: elems, as: 'element'} -->
+        <!-- ko if: hasTemplate() -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!-- /ko -->
+    <!-- /ko -->
+    </div>
+</div>

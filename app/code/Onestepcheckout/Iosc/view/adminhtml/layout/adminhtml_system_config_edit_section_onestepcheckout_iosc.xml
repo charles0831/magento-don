@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Onestepcheckout_Iosc::css/iosc-app.css"/>
+    </head>
+    <body>
+        <referenceContainer name="js">
+            <block class="Onestepcheckout\Iosc\Block\Adminhtml\Config" template="Onestepcheckout_Iosc::system/config/app.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,29 @@
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="shipping-address-item" data-bind="css: isSelected() ? 'selected-item' : 'not-selected-item', click: selectAddress">
+    <!-- ko if: (!isSelected()) -->
+    <span data-bind="i18n: 'Ship here:'"></span>
+    <!-- /ko -->
+    <!-- ko text: address().prefix --><!-- /ko --> <!-- ko text: address().firstname --><!-- /ko -->
+    <!-- ko text: address().lastname --><!-- /ko --> <!-- ko text: address().suffix --><!-- /ko -->
+    <!-- ko text: address().street --><!-- /ko -->
+    <!-- ko text: address().city --><!-- /ko -->, <!-- ko text: address().region --><!-- /ko --><!-- ko text: address().postcode --><!-- /ko -->
+    <!-- ko text: getCountryName(address().countryId) --><!-- /ko -->
+    <!-- ko text: address().telephone --><!-- /ko -->
+    <!-- ko foreach: { data: address().customAttributes, as: 'element' } -->
+        <!-- ko foreach: { data: Object.keys(element), as: 'attribute' } -->
+            <!-- ko text: element[attribute].value --><!-- /ko -->
+         <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: (address().isEditable()) -->
+    <button type="button"
+            class="action edit-address-link"
+            data-bind="click: editAddress, visible: address().isEditable()">
+        <span data-bind="i18n: 'Edit'"></span>
+    </button>
+    <!-- /ko -->
+</div>

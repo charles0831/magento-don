@@ -1,0 +1,14 @@
+<div class="iosc-registration" data-bind="visible: isExistingPasswordVisible() === false && isMoved">
+    <div class="password-toggle">
+        <input type="checkbox" name="show-password" data-bind="checked: showPwd, attr: {id: 'show-password'}"/>
+        <label data-bind="attr: {for: 'show-password'}"><span data-bind="i18n: 'Register / Choose a password'"></span></label>
+    </div>
+    <div class="password-fields fieldset" data-bind="visible: showPwd" >
+        <!-- ko foreach: {data: elems, as: 'element'} -->
+            <!-- ko if: hasTemplate() -->
+                <!-- ko template: getTemplate() -->
+                <!--/ko-->
+            <!--/ko-->
+        <!--/ko-->
+    </div>
+</div>

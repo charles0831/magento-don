@@ -1,0 +1,47 @@
+/* picture of hand for dragging and reordering input fields */
+.ui-sortable  td:nth-child(1) {
+    background-image:url(drag_hand_icon.png);
+    background-repeat:no-repeat;
+    background-size:30px 30px;
+    background-position: 10px;
+}
+
+.admin__control-table th {
+   white-space: nowrap;
+}
+
+.admin__control-table th {
+    padding: 1.3rem 1.3rem 1.3rem 0;
+}
+
+.admin__control-table td {
+    padding: 0.8rem 0.8rem 0.8rem 0.8rem;
+}
+
+.admin__control-table tbody td:nth-child(3), .admin__control-table tbody td:nth-child(4){
+    text-align: center;
+}
+
+.admin__control-table tbody td:nth-child(1) {
+    cursor: move;
+    text-align: right;
+}
+
+
+.admin__control-table td:nth-child(1) input[readonly] {
+    border: none;
+    cursor: move;
+    text-align: right;
+    opacity: 1;
+    background: transparent;
+    width: 24px
+}
+
+
+
+.ui-state-highlight {
+    height: 2.5em;
+    line-height: 1.2em;
+    border-color: #999;
+}
+

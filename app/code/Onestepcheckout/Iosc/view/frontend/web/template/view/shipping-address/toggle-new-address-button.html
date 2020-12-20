@@ -1,0 +1,15 @@
+<!-- ko if: (!isFormInline) -->
+<div class="newaddress-button _collapsible"
+     data-bind="mageInit: {'collapsible':{'openedState': '_active'}}, click: showFormPopUp, visible: !isNewAddressAdded()">
+    <div class="newaddress-button-title field choice" data-role="title">
+        <span class="action action-toggle" id="newaddress-heading" role="heading" aria-level="2">
+            <!-- ko i18n: 'Add new shipping address'--><!-- /ko -->
+        </span>
+    </div>
+</div>
+<div class="newaddress-save-button-container" data-bind="visible: isFormPopUpVisible(), afterRender: isRendered">
+    <button class="newaddress-save-button" data-bind="click: saveNewAddress">
+        <span data-bind="i18n: 'Add to address list'"></span>
+    </button>
+</div>
+<!-- /ko -->

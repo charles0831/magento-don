@@ -1,0 +1,5 @@
+<!-- ko if: $data.errorValidationMessage().length > 0 -->
+    <div class="message notice" data-bind="scrollTo: focused">
+        <span><!-- ko text: $data.errorValidationMessage()--><!-- /ko --></span>
+    </div>
+<!-- /ko -->
