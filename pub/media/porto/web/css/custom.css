@@ -2224,5 +2224,5 @@ hr.solid {
 }
 
 body{
-    font-weight:bold;
+    font-weight:bold!important;
 }
