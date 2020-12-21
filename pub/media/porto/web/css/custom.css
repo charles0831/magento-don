@@ -2226,3 +2226,11 @@ hr.solid {
 body{
     font-weight:bold!important;
 }
+
+.moved-add-to-links {
+    display: none;
+}
+
+.buynow-button{
+    float: right;
+}
