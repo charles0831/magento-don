@@ -1,6 +1,6 @@
 /**
  * WARNING: Do not change this file. Your changes will be lost.
- * 2020-12-15 18:49:05 */
+ * 2020-12-21 18:07:41 */
 
 html, body { 
         font-size: 14px; 
@@ -60,6 +60,7 @@ a,a:hover, .page-header a, .page-header a:hover, .page-header .panel.header .hea
 
 .page-wrapper {
 }
+html,body{color:#010301}
 a:hover{color:#229912}
 button.action.primary{
 }
@@ -84,7 +85,7 @@ button.action.primary:hover{
 }
 @media (min-width: 768px){
     .sw-megamenu.navigation li.level0.fullwidth > .submenu a, .sw-megamenu.navigation li.level0.staticwidth > .submenu a {
-        color: #777777;
+        color: #010101;
     }
 }
 .footer-top{

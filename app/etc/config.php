@@ -224,6 +224,7 @@ return [
         'Mageplaza_AjaxLayer' => 1,
         'Mageplaza_LayeredNavigation' => 1,
         'Mageplaza_Search' => 1,
+        'Mageprince_BuyNow' => 1,
         'Onestepcheckout_Iosc' => 1,
         'Smartwave_Core' => 1,
         'Smartwave_Dailydeals' => 1,

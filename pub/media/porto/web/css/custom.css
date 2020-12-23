@@ -2227,6 +2227,18 @@ body{
     font-weight:bold!important;
 }
 
+body{
+    font-weight:bold!important;
+}
+
+label,div,th{
+    font-weight:bold!important;
+}
+
+span{
+    font-weight:bold!important;
+}
+
 .moved-add-to-links {
     display: none;
 }
@@ -2234,3 +2246,27 @@ body{
 .buynow-button{
     float: right;
 }
+
+.opc-block-summary .mark .value,
+.opc-progress-bar-item._active > span,
+.opc-wrapper .step-title,.opc-block-summary .mark .value,.opc-wrapper .step-title, .opc-block-shipping-information .shipping-information-title,
+.opc-block-summary > .title, .checkout-agreements-items .checkout-agreements-item-title{
+    color: #000302;
+}
+
+.cart-discount{
+    display: none;
+}
+
+.payment-option._collapsible.opc-payment-additional.discount-code {
+    display: none;
+}
+
+.checkout-index-index .payment-option._collapsible.opc-payment-additional.discount-code {
+    display: none;
+}
+
+.field-tooltip .field-tooltip-content{
+    width: 470px;
+}
+
