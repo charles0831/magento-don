@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="coster_sync_coster_products" instance="Xcentia\Coster\Cron\Observer" method="syncCosterProducts" >
+            <schedule>0 0 * * *</schedule>
+        </job>
+        <job name="coster_create_new_products" instance="Xcentia\Coster\Cron\Observer" method="createNewProduct" >
+            <schedule>10 * * * *</schedule>
+        </job>
+
+        <job name="coster_sync_coster_inventory" instance="Xcentia\Coster\Cron\Observer" method="syncCosterInventory" >
+            <schedule>*/30 * * * *</schedule>
+        </job>
+        <job name="coster_update_product_inventory" instance="Xcentia\Coster\Cron\Observer" method="updateInventory" >
+            <schedule>*/10 * * * *</schedule>
+        </job>
+
+        <job name="coster_sync_coster_cost" instance="Xcentia\Coster\Cron\Observer" method="syncCosterCost" >
+            <schedule>0 1 * * *</schedule>
+        </job>
+        <job name="coster_update_product_price" instance="Xcentia\Coster\Cron\Observer" method="updateProductPrice" >
+            <schedule>0/40 * * * *</schedule>
+        </job>
+
+
+        <!--
+            <xcentia_coster_create_products>
+                <schedule><cron_expr>* * * * *</cron_expr></schedule>
+                <run><model>xcentia_coster/observer::createProduct</model></run>
+            </xcentia_coster_create_products>
+            <xcentia_coster_recreate_info>
+                <schedule><cron_expr>* * * * *</cron_expr></schedule>
+                <run><model>xcentia_coster/observer::recreateProduct</model></run>
+            </xcentia_coster_recreate_info>
+            -->
+
+        <!--<xcentia_coster_sync_exeption_price>-->
+        <!--<schedule><cron_expr>0 2 * * *</cron_expr></schedule>-->
+        <!--<run><model>xcentia_coster/observer::syncCosterExceptionPrice</model></run>-->
+        <!--</xcentia_coster_sync_exeption_price>-->
+        <!--<xcentia_coster_update_free_shipping_per_product>-->
+        <!--<schedule><cron_expr>30 * * * *</cron_expr></schedule>-->
+        <!--<run><model>xcentia_coster/observer::updateFreeShippingPerProduct</model></run>-->
+        <!--</xcentia_coster_update_free_shipping_per_product>-->
+
+        <!--<xcentia_coster_enable_products>-->
+        <!--<schedule><cron_expr>40 * * * *</cron_expr></schedule>-->
+        <!--<run><model>xcentia_coster/observer::enablesCoasterProducts</model></run>-->
+        <!--</xcentia_coster_enable_products>-->
+
+    </group>
+</config>

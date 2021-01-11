@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="magento_catalog_api_data_productinterface_save_before">
+        <observer name="legacy_model_save" instance="Xcentia\Coster\Observer\BeforeEntitySave" />
+    </event>
+</config>
