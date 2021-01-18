@@ -54,7 +54,7 @@ class CronBase
 //        $registry->register('isSecureArea', true);
     }
 
-    public function GetProductBySku($sku){
+    public function GetCosterProductBySku($sku){
         $model = $this->objMgr->create('\Xcentia\Coster\Model\Product');
         $iProduct =$model->load($sku, 'sku');
         return $iProduct;

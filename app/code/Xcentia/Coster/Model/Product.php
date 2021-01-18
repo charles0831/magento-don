@@ -46,13 +46,11 @@ class Product extends \Magento\Framework\Model\AbstractModel
     //-----old code
     public function beforeSave()
     {
-        parent::beforeSave();
-        $now = Mage::getSingleton('core/date')->gmtDate();
         if ($this->isObjectNew()) {
-            $this->setCreatedAt($now);
+            $this->setCreatedAt(time());
         }
-        $this->setUpdatedAt($now);
-        return $this;
+        $this->setUpdatedAt(time());
+        return parent::beforeSave();
     }
 
     /**

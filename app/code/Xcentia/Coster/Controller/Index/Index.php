@@ -22,7 +22,7 @@ class Index extends \Magento\Framework\App\Action\Action
         $this->_productFactory=$productFactory;
         return parent::__construct($context);
     }
-//https://pricebusters.org/coster
+//https://pricebusters.org/coster?key=gorhdufzk&name=syncCosterProducts
     public function execute()
     {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();

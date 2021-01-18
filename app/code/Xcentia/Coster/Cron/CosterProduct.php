@@ -6,7 +6,7 @@ use Exception;
 class CosterProduct extends CronBase
 {
     //This function checks the products with the API, adds new products to the xcentia_coster/product table
-//0 0 * * *  https://pricebusters.org/coster?name=syncCosterProducts&key=gorhdufzk
+//0 0 * * *  https://pricebusters.furniture/coster?name=syncCosterProducts&key=gorhdufzk
     public function syncCosterProducts()
     {
         $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/product_sync.log');
@@ -26,19 +26,20 @@ class CosterProduct extends CronBase
                 $sku = $cProduct->ProductNumber;
                 $lastSku = substr($sku, -2);
                 $B1 = ($lastSku == "B1" || $lastSku == "B2" || $lastSku == "B3") ? true : false;
-                $iProduct=$this->GetProductBySku($cProduct->ProductNumber);
+                $iProduct=$this->GetCosterProductBySku($sku);
                 if (!$iProduct->getSku() && !$cProduct->IsDiscontinued && $cProduct->NumImages > 0 && !$B1) {
-                    $iProduct->sku = $sku;
-                    $iProduct->content = json_encode($cProduct);
-                    $iProduct->create_product_status = "1";
-                    $iProduct->cost_status = "0";
-                    $iProduct->inventory_status = "0";
-                    $iProduct->price_status = "0";  //for exception price
-                    $iProduct->state = "1";
-                    $iProduct->status = self::Init_Status;  //init
+                    $iProduct->setSku($sku);
+                    $iProduct->setContent(json_encode($cProduct));
+                    $iProduct->setCreateProductStatus(1);
+                    $iProduct->setCostStatus(0);
+                    $iProduct->setInventoryStatus(0);
+                    $iProduct->setPriceStatus(0);  //for exception price
+                    $iProduct->setState(1);
+                    $iProduct->setStatus(self::Init_Status);  //init
                     $iProduct->save();
                     $cn++;
                     $this->Log("New iProduct: " . $sku);
+//                    return;
                 } else if ($iProduct->getSku() && ($cProduct->IsDiscontinued || $cProduct->NumImages == 0 || $B1)) {
                     $this->Log("Delete: " . $sku);
                     $iProduct->delete();
@@ -47,12 +48,6 @@ class CosterProduct extends CronBase
                     }catch (Exception $e){
                         $this->Log("No Exist Product");
                     }
-
-//                    $product = $this->GetCatalogProductBySku($sku);
-//                    if ($product){
-//                        print_r($product->sku);
-//                        $product->delete();
-//                    }
                 }
             }
         } catch (Exception $e) {
@@ -65,7 +60,6 @@ class CosterProduct extends CronBase
         $log = "sync finished cn:".$cn." at: " . $importdate . "\n";
         $this->Log($log);
     }
-
 
     //This function creates new products in magento
 //10 * * * *     https://pricebusters.furniture/coster/product/createNewProduct?key=gorhdufzk
