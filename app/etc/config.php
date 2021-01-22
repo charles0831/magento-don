@@ -220,10 +220,18 @@ return [
         'Magento_Wishlist' => 1,
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
+        'Akio_CustomShipping' => 1,
+        'Amasty_Base' => 1,
+        'Amasty_Conditions' => 1,
+        'Amasty_CommonTests' => 1,
+        'Amasty_CommonRules' => 1,
+        'Amasty_ShippingArea' => 1,
+        'Amasty_Shiprules' => 1,
         'Mageplaza_Core' => 1,
         'Mageplaza_AjaxLayer' => 1,
         'Mageplaza_LayeredNavigation' => 1,
         'Mageplaza_Search' => 1,
+        'Mageplaza_Smtp' => 1,
         'Mageprince_BuyNow' => 1,
         'Onestepcheckout_Iosc' => 1,
         'Smartwave_Core' => 1,
@@ -232,6 +240,8 @@ return [
         'Smartwave_Megamenu' => 1,
         'Smartwave_Porto' => 1,
         'Smartwave_Socialfeeds' => 1,
-        'Ubertheme_Ubdatamigration' => 1
+        'Ubertheme_Ubdatamigration' => 1,
+        'Xcentia_Coster' => 1,
+        'Xcentia_Event' => 1
     ]
 ];
