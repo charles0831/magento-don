@@ -2,6 +2,7 @@
 
 namespace Xcentia\Coster\Cron;
 use Exception;
+use Magento\Framework\Filesystem\Io\File;
 
 class CosterProduct extends CronBase
 {
@@ -62,44 +63,43 @@ class CosterProduct extends CronBase
     }
 
     //This function creates new products in magento
-//10 * * * *     https://pricebusters.furniture/coster/product/createNewProduct?key=gorhdufzk
+//10 * * * *     https://pricebusters.furniture/coster?name=createNewProduct?key=gorhdufzk
     public function createNewProduct()
     {
         $this->StartTime('product_sync');
 
-        $iProducts = Mage::getModel('xcentia_coster/product')
+        $iProducts = $this->objMgr->create('\Xcentia\Coster\Model\Product')
             ->getCollection()
             ->addFieldToFilter('create_product_status', '1')
             ->setPageSize(100)
             ->setCurPage(1);
 
         if ($iProducts->getSize() > 0) {
-            $store_id = 1;
-            $website_id = Mage::app()->getStore($store_id)->getWebsiteId();
-
             $mediaAttribute = array('thumbnail', 'small_image', 'image');
-            $file = new Varien_Io_File();
-            $path = Mage::getBaseDir('media') . DS . 'imports' . DS;
+            $file = new File();
+            $path = $this->directoryList->getPath('media') . DS . 'imports' . DS;
             $file->mkdir($path);
             foreach ($iProducts as $iProduct) {
-                //echo '<pre>'; print_r($iProduct);die("ok");
-                $iProductObject = Mage::getModel('xcentia_coster/product')->load($iProduct->getId());
+                $iProductObject = $this->objMgr->create('\Xcentia\Coster\Model\Product')->load($iProduct->getId());
                 $sku = $iProductObject->getSku();
-                $productId = Mage::getModel('catalog/product')->getIdBySku($sku);
+                $productId = $this->objMgr->create('\Magento\Catalog\Model\Product')->getIdBySku($sku);
                 $prodInfo = json_decode($iProductObject->getContent());
-                //echo '<pre>'; print_r($prodInfo);die("ok");
                 $lastSku = substr($sku, -2);
                 $B1 = ($lastSku == "B1" || $lastSku == "B2" || $lastSku == "B3") ? true : false;
                 if ($prodInfo->NumImages > 0 && false === $productId && $prodInfo->IsDiscontinued == false && !$B1) {
-                    $product = Mage::getModel('catalog/product');
-
                     $images = array();
                     $num = 1;
                     while ($num <= $prodInfo->NumImages) {
                         $name = $prodInfo->ProductNumber . '-' . $num . '.jpg';
                         if (!file_exists($path . $name)) {
-                            $data = file_get_contents('http://assets.coasteramer.com/productpictures/' . $prodInfo->ProductNumber . '/' . $num . 'x900.jpg');
-                            $file->write($path . $name, $data);
+                            try{
+                                $image_url='http://assets.coasteramer.com/productpictures/' . $prodInfo->ProductNumber . '/' . $num . 'x900.jpg';
+                                $data = file_get_contents($image_url);
+                                $file->write($path . $name, $data);
+                            }
+                            catch (Exception $e){
+                                $this->Log("--No Image: ".$image_url);
+                            }
                         }
                         $images[$num] = $name;
                         $num++;
@@ -107,34 +107,36 @@ class CosterProduct extends CronBase
 
                     $name = '';
                     $description = '';
+
                     if (!empty($prodInfo->CollectionCode)) {
-                        $collect = Mage::getModel('xcentia_coster/collections')->load($prodInfo->CollectionCode, 'collection_code')->getCollectionName();
+                        $collect = $this->objMgr->create('\Xcentia\Coster\Model\Collections')->load($prodInfo->CollectionCode, 'collection_code')->getCollectionName();
                         $name .= ucwords(strtolower($collect));
                         $description .= 'Part of the ' . ucwords(strtolower($collect)) . ' by Coaster<br />';
                     }
                     if (!empty($prodInfo->StyleCode)) {
-                        $style = Mage::getModel('xcentia_coster/style')->load($prodInfo->StyleCode, 'style_code')->getStyleName();
+                        $style = $this->objMgr->create('\Xcentia\Coster\Model\Style')->load($prodInfo->StyleCode, 'style_code')->getStyleName();
                         $name .= ucwords(strtolower($style));
                     }
-                    $name .= ucwords(strtolower($prodInfo->MeasurementList[0]->PieceName));
+
+                    $name .= ucwords(strtolower(isset($prodInfo->MeasurementList[0]->PieceName)?$prodInfo->MeasurementList[0]->PieceName:' '));
 
                     $description .= 'Model Number: ' . $iProductObject->getSku() . '<br />';
 
-                    if ($prodInfo->MeasurementList[0]->Width && $prodInfo->MeasurementList[0]->Length && $prodInfo->MeasurementList[0]->Height) {
+                    if (isset($prodInfo->MeasurementList[0]->Width) && isset($prodInfo->MeasurementList[0]->Length) && isset($prodInfo->MeasurementList[0]->Height)) {
                         $description .= 'Dimensions: Width: ' . $prodInfo->MeasurementList[0]->Width . '  x  Depth: ' . $prodInfo->MeasurementList[0]->Length . '  x  Height: ' . $prodInfo->MeasurementList[0]->Height . '<br />';
                     }
 
-
-                    $cat = Mage::getModel('xcentia_coster/category')
+                    $cat = $this->objMgr->create('\Xcentia\Coster\Model\Category')
                         ->getCollection()
                         ->addFieldToFilter('categorycode', $prodInfo->CategoryCode)
                         ->addFieldToFilter('subcategorycode', $prodInfo->SubcategoryCode)
                         ->addFieldToFilter('piececode', $prodInfo->PieceCode)
                         ->getFirstItem();
-                    $categories = array(9, $cat->category_id, $cat->subcategory_id, $cat->peice_id);
-
+                    $categories = array(9, $cat->getCategoryId(), $cat->getSubcategoryId(), $cat->getPeiceId());
 
                     $price = $iProductObject->getCost() * self::MARGIN;
+
+                    $product = $this->objMgr->create('\Magento\Catalog\Model\Product');
 
                     if ($iProductObject->getPrice() > 0) {
                         $product->setMultishipping_rate('0');
@@ -143,6 +145,8 @@ class CosterProduct extends CronBase
                     }
 
                     $shippable = 1;
+                    $store_id = 1;
+                    $website_id =(int)$this->storeManager->getStore($store_id)->getWebsiteId();
 
                     $product->setStoreId($store_id)
                         ->setWebsiteIds(array($website_id))
@@ -168,7 +172,7 @@ class CosterProduct extends CronBase
                         ->setPkgQty($prodInfo->PackQty)
                         ->setShipable($shippable)
                         ->setMetaDescription(strip_tags($prodInfo->Description))
-                        ->setVisibility(Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH);
+                        ->setVisibility(\Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH);
 
                     $product->setStockData(array(
                             'manage_stock' => 1,
@@ -176,6 +180,7 @@ class CosterProduct extends CronBase
                             'qty' => (int)$iProductObject->getQty()
                         )
                     );
+
                     $noImage=false;
                     foreach ($images as $n => $image) {
                         if (file_exists($path . $image)) {
@@ -184,15 +189,15 @@ class CosterProduct extends CronBase
                             else
                                 $product->addImageToMediaGallery($path . $image, null, false, false);
                             $log = $path . $image;
-                            Mage::log($log, null, 'product_sync.log', true);
+                            $this->Log($log);
                         } else {
                             $noImage=true;
-                            Mage::log("no image", null, 'product_sync.log', true);
+                            $this->Log("no image");
                         }
                     }
                     if ($noImage){
                         $log = 'no Image ' . $iProductObject->getSku() . ' will be recreate---------';
-                        Mage::log($log, null, 'product_sync.log', true);
+                        $this->Log($log);
                         continue;
                     }
 
@@ -201,12 +206,12 @@ class CosterProduct extends CronBase
                         $iProductObject->setCreate_product_status(0)->save();
                         $iProductObject->setStatus(self::Created_Status)->save();
                         $log = 'new product ' . $iProductObject->getSku() . ' saved';
-                        Mage::log($log, null, 'product_sync.log', true);
+                        $this->Log($log);
                         $product->save();
                     } catch (Exception $e) {
-                        Mage::logException($e);
+                        $this->Log($e);
                         $log = "\n" . 'Could not save product ' . $iProductObject->getSku() . ' ID [' . $iProductObject->getEntity_id() . "]\n";
-                        Mage::log($log, null, 'product_sync.log', true);
+                        $this->Log($log);
                     }
                 } else {
                     $iProductObject->setCreate_product_status(2)->save();
@@ -225,13 +230,11 @@ class CosterProduct extends CronBase
                     } else {
                         $log = 'not create ' . $iProductObject->getSku() . ' other reason ';
                     }
-                    Mage::log($log, null, 'product_sync.log', true);
+                    $this->Log($log);
                 }
+//                return;
             }
         }
-        $time_elapsed_secs = microtime(true) - $start;
-        $importdate = date("d-m-Y H:i:s", strtotime("now"));
-        $log = "Create new products finished at: " . $importdate . " Done in " . round($time_elapsed_secs) . " seconds!" . "\n";
-        Mage::log($log, null, 'product_sync.log', true);
+        $this->EndTimeLog();
     }
 }

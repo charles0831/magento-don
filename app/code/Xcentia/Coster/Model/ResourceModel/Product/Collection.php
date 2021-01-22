@@ -58,7 +58,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     public function getSelectCountSql()
     {
         $countSelect = parent::getSelectCountSql();
-        $countSelect->reset(Zend_Db_Select::GROUP);
+//        $countSelect->reset(Zend_Db_Select::GROUP);
         return $countSelect;
     }
 }

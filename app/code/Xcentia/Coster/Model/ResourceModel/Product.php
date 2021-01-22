@@ -1,10 +1,10 @@
 <?php
 
 namespace Xcentia\Coster\Model\ResourceModel;
+use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
-class Product extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
+class Product extends AbstractDb
 {
-
     public function __construct(
         \Magento\Framework\Model\ResourceModel\Db\Context $context
     )

@@ -1,6 +1,8 @@
 <?php
 
 namespace Xcentia\Coster\Cron;
+define('DS', DIRECTORY_SEPARATOR);
+use Magento\Store\Model\StoreManagerInterface;
 
 class CronBase
 {
@@ -18,13 +20,21 @@ class CronBase
     protected $productRepository;
     protected $registry;
     protected $startTime;
+    protected $storeManager;
+    protected $directoryList;
 
     public $isBrowser=false;
 
-    public function __construct(\Magento\Catalog\Model\ProductRepository $productRepository,
-                                \Magento\Framework\Registry $registry) {
+    public function __construct(
+        \Magento\Catalog\Model\ProductRepository $productRepository,
+        \Magento\Framework\Registry $registry,
+        StoreManagerInterface $storeManager,
+        \Magento\Framework\App\Filesystem\DirectoryList $_directorylist
+    ) {
         $this->productRepository = $productRepository;
         $this->registry = $registry;
+        $this->storeManager = $storeManager;
+        $this->directoryList=$_directorylist;
 
         $this->logger = new \Zend\Log\Logger();
         $this->objMgr = \Magento\Framework\App\ObjectManager::getInstance();
@@ -42,7 +52,14 @@ class CronBase
 
         $this->startTime = microtime(true);
         $importdate = date("d-m-Y H:i:s", strtotime("now"));
-        $log = $file."started at: " . $importdate;
+        $log = $file."  started at: " . $importdate;
+        $this->Log($log);
+    }
+
+    public function EndTimeLog(){
+        $time_elapsed_secs = microtime(true) - $this->startTime;
+        $importdate = date("d-m-Y H:i:s", strtotime("now"));
+        $log = "finished at: " . $importdate . " Done in " . round($time_elapsed_secs) . " seconds!" . "\n";
         $this->Log($log);
     }
 

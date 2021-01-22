@@ -1,27 +1,8 @@
 <?php
-/**
- * Xcentia_Coster extension
- * 
- * NOTICE OF LICENSE
- * 
- * This source file is subject to the MIT License
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/mit-license.php
- * 
- * @category       Xcentia
- * @package        Xcentia_Coster
- * @copyright      Copyright (c) 2017
- * @license        http://opensource.org/licenses/mit-license.php MIT License
- */
-/**
- * Style model
- *
- * @category    Xcentia
- * @package     Xcentia_Coster
- * @author      Ultimate Module Creator
- */
-class Xcentia_Coster_Model_Style extends Mage_Core_Model_Abstract
+
+namespace Xcentia\Coster\Model;
+
+class Style extends \Magento\Framework\Model\AbstractModel
 {
     /**
      * Entity code.
@@ -53,8 +34,7 @@ class Xcentia_Coster_Model_Style extends Mage_Core_Model_Abstract
      */
     public function _construct()
     {
-        parent::_construct();
-        $this->_init('xcentia_coster/style');
+        $this->_init('Xcentia\Coster\Model\ResourceModel\Style');
     }
 
     /**
@@ -66,13 +46,11 @@ class Xcentia_Coster_Model_Style extends Mage_Core_Model_Abstract
      */
     protected function _beforeSave()
     {
-        parent::_beforeSave();
-        $now = Mage::getSingleton('core/date')->gmtDate();
         if ($this->isObjectNew()) {
-            $this->setCreatedAt($now);
+            $this->setCreatedAt(time());
         }
-        $this->setUpdatedAt($now);
-        return $this;
+        $this->setUpdatedAt(time());
+        return parent::beforeSave();
     }
 
     /**

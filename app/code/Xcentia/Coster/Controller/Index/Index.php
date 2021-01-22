@@ -22,7 +22,6 @@ class Index extends \Magento\Framework\App\Action\Action
         $this->_productFactory=$productFactory;
         return parent::__construct($context);
     }
-//https://pricebusters.org/coster?key=gorhdufzk&name=syncCosterProducts
     public function execute()
     {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
@@ -33,12 +32,16 @@ class Index extends \Magento\Framework\App\Action\Action
         }
         $name=$this->getRequest()->getParam('name');
         echo $name."..";
+        $cron = $objectManager->create('\Xcentia\Coster\Cron\CosterProduct');
+        echo nl2br("\nrunning...\n");
+        $cron->isBrowser=true;
         if ($name=='syncCosterProducts'){
             //0 0 * * *  https://pricebusters.org/coster?name=syncCosterProducts&key=gorhdufzk
-            $cron = $objectManager->create('\Xcentia\Coster\Cron\CosterProduct');
-            echo nl2br("\nrunning...\n");
-            $cron->isBrowser=true;
             $cron->syncCosterProducts();
+        }
+        else if($name=='createNewProduct'){
+            //10 * * * * https://pricebusters.furniture/coster?name=createNewProduct&key=gorhdufzk
+            $cron->createNewProduct();
         }
 
         echo "<br/> Done!";
