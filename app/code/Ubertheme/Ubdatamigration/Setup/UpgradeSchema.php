@@ -59,7 +59,6 @@ class UpgradeSchema implements UpgradeSchemaInterface
                             'comment' => 'Mapping status'
                         ]);
                     }
-
                 }
             }
         }

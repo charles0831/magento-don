@@ -1,8 +1,15 @@
+3.2.5
+=====
+* Fix and Improvement:
+    + Allowed migrate Category's display settings and related CMS Blocks
+    + Tuning to handle more special cases. Better handle for delta migration phase.
+    + Fixed compatible with CE 2.4.1
+    
 3.2.4
 =====
 * Fix and Improvement:
     + Allowed convert special price, special_price from/to datetime and variations prices setting in a Configurable product.
-    + Tuning to handle more special cases. Better hanlde for delta migration phase.
+    + Tuning to handle more special cases. Better handle for delta migration phase.
     + Fixed compatible with CE 2.4.0
 
 3.2.3
