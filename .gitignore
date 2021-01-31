@@ -68,3 +68,4 @@ atlassian*
 /generated/*
 !/generated/.htaccess
 .DS_Store
+/pub/ub-tool/protected/runtime/cache/*
