@@ -63,7 +63,7 @@ class CosterProduct extends CronBase
     }
 
     //This function creates new products in magento
-//10 * * * *     https://pricebusters.furniture/coster?name=createNewProduct?key=gorhdufzk
+//10 * * * *     https://pricebusters.furniture/coster?name=createNewProduct&key=gorhdufzk
     public function createNewProduct()
     {
         $this->StartTime('product_sync');
@@ -86,7 +86,8 @@ class CosterProduct extends CronBase
                 $prodInfo = json_decode($iProductObject->getContent());
                 $lastSku = substr($sku, -2);
                 $B1 = ($lastSku == "B1" || $lastSku == "B2" || $lastSku == "B3") ? true : false;
-                if ($prodInfo->NumImages > 0 && false === $productId && $prodInfo->IsDiscontinued == false && !$B1) {
+                if ($prodInfo->NumImages > 0 && false === $productId && $prodInfo->IsDiscontinued == false && !$B1 && isset($prodInfo->CategoryCode)) {
+                    $this->Log($sku.'==========');
                     $images = array();
                     $num = 1;
                     while ($num <= $prodInfo->NumImages) {
@@ -96,12 +97,12 @@ class CosterProduct extends CronBase
                                 $image_url='http://assets.coasteramer.com/productpictures/' . $prodInfo->ProductNumber . '/' . $num . 'x900.jpg';
                                 $data = file_get_contents($image_url);
                                 $file->write($path . $name, $data);
+                                $images[$num] = $name;
                             }
                             catch (Exception $e){
                                 $this->Log("--No Image: ".$image_url);
                             }
                         }
-                        $images[$num] = $name;
                         $num++;
                     }
 
@@ -203,7 +204,7 @@ class CosterProduct extends CronBase
 
                     //echo '<pre>'; print_r($product); die('OK');
                     try {
-                        $iProductObject->setCreate_product_status(0)->save();
+                        $iProductObject->setCreateProductStatus(0)->save();
                         $iProductObject->setStatus(self::Created_Status)->save();
                         $log = 'new product ' . $iProductObject->getSku() . ' saved';
                         $this->Log($log);
@@ -212,12 +213,13 @@ class CosterProduct extends CronBase
                         $this->Log($e);
                         $log = "\n" . 'Could not save product ' . $iProductObject->getSku() . ' ID [' . $iProductObject->getEntity_id() . "]\n";
                         $this->Log($log);
+                        return;
                     }
                 } else {
-                    $iProductObject->setCreate_product_status(2)->save();
-                    $iProductObject->setInventory_status(2)->save();
-                    $iProductObject->setCost_status(2)->save();
-                    $iProductObject->setPrice_status(2)->save();
+                    $iProductObject->setCreateProductStatus(2)->save();
+                    $iProductObject->setInventoryStatus(2)->save();
+                    $iProductObject->setCostStatus(2)->save();
+                    $iProductObject->setPriceStatus(2)->save();
                     $iProductObject->setStatus(self::Disable_Status)->save();
                     if ($prodInfo->IsDiscontinued != false) {
                         $log = 'not create ' . $iProductObject->getSku() . ' Discontinued';
@@ -227,6 +229,8 @@ class CosterProduct extends CronBase
                         $log = 'not create ' . $iProductObject->getSku() . ' Product Id already exist';
                     } elseif ($B1) {
                         $log = 'not create ' . $iProductObject->getSku() . ' ' . $lastSku;
+                    } elseif (!isset($prodInfo->CategoryCode)){
+                        $log = 'not create ' . $iProductObject->getSku() . ' not category value ********';
                     } else {
                         $log = 'not create ' . $iProductObject->getSku() . ' other reason ';
                     }

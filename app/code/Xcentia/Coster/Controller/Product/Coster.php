@@ -10,7 +10,7 @@ namespace Xcentia\Coster\Controller\Product;
 
 class Coster extends \Magento\Framework\App\Action\Action
 {
-//https://pricebusters.org/coster/product/coster?sku=CB60RT
+//https://pricebusters.furniture/coster/product/coster?sku=CB60RT
     public function execute()
     {
         $sku=$this->getRequest()->getParam('sku');

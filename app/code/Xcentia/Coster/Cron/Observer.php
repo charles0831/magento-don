@@ -34,7 +34,7 @@ class Observer
 //>*/30 * * * * pricebusters.furniture/coster/product/syncCosterInventory?key=gorhdufzk
     public function syncCosterInventory()
     {
-        $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/inventory_sync.log');
+        $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/inventory_sync_new.log');
         $this->logger->addWriter($writer);
 
         $importdate = date("d-m-Y H:i:s", strtotime("now"));

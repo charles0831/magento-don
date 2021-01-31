@@ -8,6 +8,7 @@
 
 namespace Xcentia\Coster\Controller\Index;
 
+
 class Index extends \Magento\Framework\App\Action\Action
 {
     protected $_pageFactory;
@@ -15,11 +16,10 @@ class Index extends \Magento\Framework\App\Action\Action
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $pageFactory,
-        \Xcentia\Coster\Model\ProductFactory $productFactory)
+        \Magento\Framework\View\Result\PageFactory $pageFactory)
     {
         $this->_pageFactory = $pageFactory;
-        $this->_productFactory=$productFactory;
+//        $this->_productFactory=$productFactory;
         return parent::__construct($context);
     }
     public function execute()
@@ -42,6 +42,18 @@ class Index extends \Magento\Framework\App\Action\Action
         else if($name=='createNewProduct'){
             //10 * * * * https://pricebusters.furniture/coster?name=createNewProduct&key=gorhdufzk
             $cron->createNewProduct();
+        }
+        else{
+            //https://pricebusters.furniture/coster?key=gorhdufzk&sku=CB60RT
+            $sku=$this->getRequest()->getParam('sku');
+            $objMgr = \Magento\Framework\App\ObjectManager::getInstance();
+            $productRepository= $objMgr->create('\Magento\Catalog\Model\ProductRepository');
+//            $product = $this->_productFactory->create();
+            $product=$productRepository->get($sku);
+            print_r($product->debug());
+            echo "----------------<br/>";
+//            $product->load($product->getIdBySku($sku));
+//            print_r($product->debug());
         }
 
         echo "<br/> Done!";

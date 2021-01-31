@@ -725,7 +725,7 @@ class Observer
                 if (!$updateProduct) {
                     $iCStatus = $iProductObject->getCreate_product_status();
                     $log = 'No Product will remove ' . $sku . ' Create_product_status:' . $iCStatus;
-                    Mage::log($log, null, 'inventory_sync.log', true);
+                    Mage::log($log, null, 'winventory_sync.log', true);
                     $iProductObject->delete();
                     continue;
                 }
