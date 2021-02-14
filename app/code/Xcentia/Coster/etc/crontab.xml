@@ -25,7 +25,7 @@
 
 
         <!--
-            <xcentia_coster_create_products>
+            <xcentia_coster_create_products>Catalog\Model\Product\Attribute\Source\Status::STATUS_ENABLED
                 <schedule><cron_expr>* * * * *</cron_expr></schedule>
                 <run><model>xcentia_coster/observer::createProduct</model></run>
             </xcentia_coster_create_products>

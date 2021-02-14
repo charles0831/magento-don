@@ -701,68 +701,7 @@ class Observer
         Mage::log($log, null, 'price_sync.log', true);
     }
 
-    // This function updates the product qty in magento with the xcentia_coster/product table.
-//*/10 * * * *    https://pricebusters.furniture/coster/product/updateInventory?key=gorhdufzk
-    public function updateInventory()
-    {
-        $start = microtime(true);
-        $importdate = date("d-m-Y H:i:s", strtotime("now"));
-        $log = "started at: " . $importdate;
-        Mage::log($log, null, 'inventory_sync.log', true);
-        Mage::register('isSecureArea', true);
-        $iProducts = Mage::getModel('xcentia_coster/product')
-            ->getCollection()
-            ->addFieldToFilter('inventory_status', '1')
-            ->setPageSize(500)
-            ->setCurPage(1);
-        if ($iProducts->getSize() > 0) {
-            foreach ($iProducts as $iProduct) {
-                $iProductObject = Mage::getModel('xcentia_coster/product')->load($iProduct->getId());
-                $sku = $iProductObject->getSku();
-                $qty = $iProductObject->getQty();
-                $iProductObject->setInventory_status(3)->save();
-                $updateProduct = Mage::getModel('catalog/product')->loadByAttribute('sku', $sku);
-                if (!$updateProduct) {
-                    $iCStatus = $iProductObject->getCreate_product_status();
-                    $log = 'No Product will remove ' . $sku . ' Create_product_status:' . $iCStatus;
-                    Mage::log($log, null, 'winventory_sync.log', true);
-                    $iProductObject->delete();
-                    continue;
-                }
-                $stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($updateProduct->getId());
-                if ($stockItem->getId() > 0 and $stockItem->getManageStock()) {
-                    $log = 'updating ' . $sku . ' '.$stockItem->getQty(). ' -> ' . $qty;
-                    $stockItem->setQty((int)$qty);
-                    $stockItem->setIsInStock((int)((int)$qty > 0));
-                    try {
-                        if ($iProductObject->status == self::Created_Status) { //init
-                            $iProductObject->setStatus(self::Qty_Status)->save(); //Inventory Updates Init.
-                        } else if ($iProductObject->status != self::Qty_Status) {
-                            if ($updateProduct->getStatus() < 2) {
-                                $updateProduct->setStatus((int)((int)$qty > 0));
-                            }
-                            $iProductObject->setStatus((int)((int)$qty > 0))->save();
-                        }
-                        $updateProduct->save();
-                        $stockItem->save();
-                        Mage::log($log, null, 'inventory_sync.log', true);
-                    } catch (Exception $e) {
-                        $log = "\n" . 'Exception [' . $sku . '] - [' . $qty . "]\n";
-                        Mage::log($log, null, 'inventory_sync.log', true);
-                        Mage::logException($e);
-                    }
-                } else {
-                    $log = "\n" . 'No Stock ' . $sku . '-' . $qty;
-                    Mage::log($log, null, 'inventory_sync.log', true);
-                }
-            }
-        }
-        Mage::unregister('isSecureArea');
-        $time_elapsed_secs = microtime(true) - $start;
-        $importdate = date("d-m-Y H:i:s", strtotime("now"));
-        $log = "Update Inventory finished at: " . $importdate . " Done in " . round($time_elapsed_secs) . " seconds!\n";
-        Mage::log($log, null, 'inventory_sync.log', true);
-    }
+
 
     function _sendRequest($endpoint)
     {

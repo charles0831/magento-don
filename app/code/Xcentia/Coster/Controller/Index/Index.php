@@ -33,8 +33,10 @@ class Index extends \Magento\Framework\App\Action\Action
         $name=$this->getRequest()->getParam('name');
         echo $name."..";
         $cron = $objectManager->create('\Xcentia\Coster\Cron\CosterProduct');
+        $cronInventory = $objectManager->create('\Xcentia\Coster\Cron\CronInventory');
         echo nl2br("\nrunning...\n");
         $cron->isBrowser=true;
+        $cronInventory->isBrowser=true;
         if ($name=='syncCosterProducts'){
             //0 0 * * *  https://pricebusters.org/coster?name=syncCosterProducts&key=gorhdufzk
             $cron->syncCosterProducts();
@@ -42,6 +44,14 @@ class Index extends \Magento\Framework\App\Action\Action
         else if($name=='createNewProduct'){
             //10 * * * * https://pricebusters.furniture/coster?name=createNewProduct&key=gorhdufzk
             $cron->createNewProduct();
+        }
+        else if($name=='syncCosterInventory'){
+            //>*/30 * * * * https://pricebusters.furniture/coster?name=syncCosterInventory&key=gorhdufzk
+            $cronInventory->syncCosterInventory();
+        }
+        else if($name=='updateInventory'){
+            //>*/30 * * * * https://pricebusters.furniture/coster?name=updateInventory&key=gorhdufzk
+            $cronInventory->updateInventory();
         }
         else{
             //https://pricebusters.furniture/coster?key=gorhdufzk&sku=CB60RT
