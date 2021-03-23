@@ -13,6 +13,12 @@ use Magento\Catalog\Model\Layer\Filter\Item as FilterItem;
 
 /**
  * Class RenderLayered Render Swatches at Layered Navigation
+ * Class RenderLayered Render Swatches at Layered Navigation
+ * Class RenderLayered Render Swatches at Layered Navigation
+ * Class RenderLayered Render Swatchs at Layered Navigation
+ * Class RenderLayered Render Swatches at Layered Navigation
+ * Class Renderlayered Render Swatches at layered Navi
+ *
  * @api
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @since 100.0.2

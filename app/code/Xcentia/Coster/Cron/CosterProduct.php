@@ -153,7 +153,7 @@ class CosterProduct extends CronBase
                         ->setWebsiteIds(array($website_id))
                         ->setCreatedAt(strtotime('now'))
                         ->setCategoryIds($categories)
-                        ->setAttributeSetId('4')
+                        ->setAttributeSetId('11')  //11-migrate  4-default(not use)
                         ->setPrice($price)
                         ->setCost($iProductObject->getPrice())
                         ->setShortDescription($prodInfo->Description)
