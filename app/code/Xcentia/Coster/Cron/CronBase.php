@@ -22,19 +22,25 @@ class CronBase
     protected $startTime;
     protected $storeManager;
     protected $directoryList;
+    protected $productFactory;
+    protected $stockRegistry ;
 
     public $isBrowser=false;
 
     public function __construct(
-        \Magento\Catalog\Model\ProductRepository $productRepository,
+        \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
+        \Magento\CatalogInventory\Api\StockRegistryInterface $stockRegistry,
         \Magento\Framework\Registry $registry,
         StoreManagerInterface $storeManager,
+        \Magento\Catalog\Api\Data\ProductInterfaceFactory $productFactory,
         \Magento\Framework\App\Filesystem\DirectoryList $_directorylist
     ) {
         $this->productRepository = $productRepository;
         $this->registry = $registry;
         $this->storeManager = $storeManager;
         $this->directoryList=$_directorylist;
+        $this->stockRegistry = $stockRegistry;
+        $this->productFactory = $productFactory;
 
         $this->logger = new \Zend\Log\Logger();
         $this->objMgr = \Magento\Framework\App\ObjectManager::getInstance();
