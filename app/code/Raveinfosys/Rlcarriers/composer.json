@@ -1,0 +1,19 @@
+{
+  "name": "raveinfosys/rlcarriers",
+  "description": "Magento 2 module for R+L Carriers Freight shipping",
+  "type": "magento2-module",
+  "version": "2.0.1",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": ">=5.5"
+  },
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Raveinfosys\\Rlcarriers\\": ""
+    }
+  }
+}

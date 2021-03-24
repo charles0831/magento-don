@@ -227,6 +227,7 @@ return [
         'Amasty_CommonRules' => 1,
         'Amasty_ShippingArea' => 1,
         'Amasty_Shiprules' => 1,
+        'Iazel_RegenProductUrl' => 1,
         'Mageplaza_Core' => 1,
         'Mageplaza_AjaxLayer' => 1,
         'Mageplaza_LayeredNavigation' => 1,
@@ -234,6 +235,7 @@ return [
         'Mageplaza_Smtp' => 1,
         'Mageprince_BuyNow' => 1,
         'Onestepcheckout_Iosc' => 1,
+        'Raveinfosys_Rlcarriers' => 1,
         'Smartwave_Core' => 1,
         'Smartwave_Dailydeals' => 1,
         'Smartwave_Filterproducts' => 1,
@@ -241,7 +243,6 @@ return [
         'Smartwave_Porto' => 1,
         'Smartwave_Socialfeeds' => 1,
         'Ubertheme_Ubdatamigration' => 1,
-        'Xcentia_Coster' => 1,
-        'Xcentia_Event' => 1
+        'Xcentia_Coster' => 1
     ]
 ];
