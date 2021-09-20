@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <group id="distancebasedshipping" translate="label" type="text" sortOrder="900" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Distance Based Shipping - Meetanshi</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Title</label>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Method Name</label>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="specificerrmsg" translate="label" type="textarea" sortOrder="40" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
+                    <label>Displayed Error Message</label>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="google_map_api" translate="label" type="text" sortOrder="50" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
+                    <label>Google Map Api Key</label>
+                    <validate>required-entry</validate>
+                    <comment><![CDATA[]]><model>Meetanshi\DistanceBasedShipping\Model\GoogleApiComment</model></comment>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="distance_unit" translate="label" type="select" sortOrder="60" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0" canRestore="1">
+                    <label>Distance Unit</label>
+                    <source_model>Meetanshi\DistanceBasedShipping\Model\DistanceUnitOptions</source_model>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="shipping_cost" translate="label" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Shipping Cost</label>
+                    <frontend_model>Meetanshi\DistanceBasedShipping\Block\Adminhtml\Form\Field\Cost</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="minimum_order_amount" translate="label" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
+                    <label>Minimum Order Amount</label>
+                    <validate>no-whitespace validate-number required-entry</validate>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="maximum_order_amount" translate="label" type="text" sortOrder="90" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
+                    <label>Maximum Order Amount</label>
+                    <validate>no-whitespace validate-number required-entry</validate>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="maximum_distance_amount" translate="label" type="text" sortOrder="100" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
+                    <label>Maximum Distance For Shipping</label>
+                    <comment>Enter the maximum distance shipping area unit where you want to deliver the shipment, For
+                        Unlimited Aread Unit Set 0
+                    </comment>
+                    <validate>required-entry no-whitespace validate-number</validate>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+
+                <field id="sallowspecific" translate="label" type="select" sortOrder="110" showInDefault="1"
+                       showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="120" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="130" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Sort Order</label>
+                    <depends>
+                        <field id="carriers/distancebasedshipping/active">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

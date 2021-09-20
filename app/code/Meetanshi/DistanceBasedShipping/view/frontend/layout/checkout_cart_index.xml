@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="cart.summary">
+            <block class="Meetanshi\DistanceBasedShipping\Block\Shipping"
+                   name="shipping_address"
+                   before="checkout.cart.shipping"
+                   template="Meetanshi_DistanceBasedShipping::cart/shipping.phtml"
+            />
+        </referenceContainer>
+        <referenceBlock name="checkout.cart.shipping">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="summary-block-config" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="shipping-rates-validation" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="distancebasedshipping-rates-validation" xsi:type="array">
+                                            <item name="component" xsi:type="string">Meetanshi_DistanceBasedShipping/js/view/shipping-rates-validation/distancebasedshipping</item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

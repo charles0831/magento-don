@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+
+    Remove or Change Displayed States and Regions
+
+    LICENSE
+
+    This source file is subject to the Eltrino LLC EULA
+    that is bundled with this package in the file LICENSE_EULA.txt.
+    It is also available through the world-wide-web at this URL:
+    http://eltrino.com/license-eula.txt
+    If you did not receive a copy of the license and are unable to
+    obtain it through the world-wide-web, please send an email
+    to license@eltrino.com so we can send you a copy immediately.
+
+    @category    Eltrino
+    @package     Eltrino_Region
+    @copyright   Copyright (c) 2020 Eltrino LLC. (http://eltrino.com)
+    @license     http://eltrino.com/license-eula.txt  Eltrino LLC EULA
+
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Multishipping\Block\Checkout\Addresses">
+        <plugin name="etrino_region_multishipping_block_checkout_plugin" type="Eltrino\Region\Plugin\Multishipping\Block\Checkout\AddressesPlugin"/>
+    </type>
+    <type name="Magento\Multishipping\Block\Checkout\Address\Select">
+        <plugin name="etrino_region_multishipping_block_checkout_address_select_plugin" type="Eltrino\Region\Plugin\Multishipping\Block\Checkout\Address\SelectPlugin"/>
+    </type>
+    <type name="Magento\Multishipping\Controller\Checkout\Addresses">
+        <plugin name="etrino_region_multishipping_controller_checkout_address_plugin" type="Eltrino\Region\Plugin\Multishipping\Controller\Checkout\AddressesPlugin"/>
+    </type>
+    <type name="Magento\Multishipping\Controller\Checkout\Billing">
+        <plugin name="etrino_region_multishipping_controller_checkout_billing_plugin" type="Eltrino\Region\Plugin\Multishipping\Controller\Checkout\BillingPlugin"/>
+    </type>
+</config>

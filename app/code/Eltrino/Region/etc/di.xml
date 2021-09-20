@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+
+    Remove or Change Displayed States and Regions
+
+    LICENSE
+
+    This source file is subject to the Eltrino LLC EULA
+    that is bundled with this package in the file LICENSE_EULA.txt.
+    It is also available through the world-wide-web at this URL:
+    http://eltrino.com/license-eula.txt
+    If you did not receive a copy of the license and are unable to
+    obtain it through the world-wide-web, please send an email
+    to license@eltrino.com so we can send you a copy immediately.
+
+    @category    Eltrino
+    @package     Eltrino_Region
+    @copyright   Copyright (c) 2020 Eltrino LLC. (http://eltrino.com)
+    @license     http://eltrino.com/license-eula.txt  Eltrino LLC EULA
+
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Eltrino\Region\Model\DisabledRegion\GridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" />
+    <type name="Magento\Checkout\Block\Checkout\AttributeMerger">
+        <plugin name="Eltrin_Region_MergePlugin" type="Eltrino\Region\Model\Plugin" sortOrder="100" />
+    </type>
+    <type name="Magento\Paypal\Block\Express\Review">
+        <plugin name="Eltrin_Region_PayPalReviewPlugin" type="Eltrino\Region\Model\Plugin" sortOrder="100" />
+    </type>
+    <type name="Magento\Checkout\Block\Onepage">
+        <plugin name="Eltrin_Region_CustomerPlugin" type="Eltrino\Region\Model\Plugin" sortOrder="300" />
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="eltrino_region_visibility_listing_data_source" xsi:type="string">Eltrino\Region\Model\ResourceModel\DisabledRegion\Grid\Collection</item>
+                <item name="eltrino_directory_region_data_source" xsi:type="string">Eltrino\Region\Model\ResourceModel\Region\Collection</item>
+                <item name="eltrino_disabled_region_data_source" xsi:type="string">Eltrino\Region\Model\ResourceModel\DisabledRegion\DisabledRegionDataProvider</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Eltrino\Region\Model\ResourceModel\Region\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">directory_country</argument>
+            <argument name="resourceModel" xsi:type="string">Magento\Directory\Model\Country</argument>
+        </arguments>
+    </type>
+    <type name="Eltrino\Region\Model\ResourceModel\DisabledRegion\DisabledRegionDataProvider">
+        <arguments>
+            <argument name="resourceModel" xsi:type="string">Eltrino\Region\Model\DisabledRegion</argument>
+        </arguments>
+    </type>
+</config>

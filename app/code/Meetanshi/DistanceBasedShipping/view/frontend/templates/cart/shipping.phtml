@@ -1,0 +1,74 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var $block Meetanshi\DistanceBasedShipping\Block\Shipping */ ?>
+<?php
+$isEnable = $block->getIsEnable();
+$addresses = $block->getAddresses();
+if ($isEnable && count($addresses)) {
+    ?>
+
+    <fieldset class="fieldset" id="WarehouseAddress">
+        <div class="field">
+            <label class="label"
+                   for="pickup_from"><span><?php echo $block->escapeHtml(__('Pickup From')) ?></span></label>
+            <div class="control">
+                <select name="pickup_from"
+                        id="pickup_from"
+                        title="<?php echo $block->escapeHtmlAttr(__('Pickup From')) ?>">
+                    <option value=""><?php echo $block->escapeHtmlAttr(__(' -- Please select address -- ')) ?></option>
+                    <?php
+                    foreach ($addresses as $address) {
+                        ?>
+                        <option
+                            value="<?php echo $address['id'] ?>"><?php echo $address['warehouse_address'] ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <?php
+}
+?>
+<script>
+    require(['jquery', 'loader', 'domReady!'], function ($) {
+        $(document).ready(function () {
+            <?php if ($block->getPickupFromId()): ?>
+            $("#pickup_from").find('option[value="<?php echo $block->getPickupFromId() ?>"]').attr("selected",true);
+            <?php endif; ?>
+
+            var isShippingZipForm = setInterval(function () {
+                if ($("#shipping-zip-form").length) {
+                    setDistance();
+                    clearInterval(isShippingZipForm);
+                }
+            }, 1000);
+        });
+        $(document).on('change', '#pickup_from', function () {
+            setDistance();
+        });
+        var distanceUrl = "<?php echo $this->getUrl() . 'dbs/index/index'?>";
+
+        function setDistance() {
+            try {
+                $.ajax({
+                    url: distanceUrl,
+                    type: 'POST',
+                    dataType: 'json',
+                    showLoader: true,
+                    data: {
+                        pickup_from: $("#pickup_from").val(),
+                    },
+                    error: function (xhr, status, errorThrown) {
+                        console.log('Error happens. Try again.');
+                    }
+                });
+            } catch (e) {
+                console.log(e);
+            }
+        }
+    });
+</script>

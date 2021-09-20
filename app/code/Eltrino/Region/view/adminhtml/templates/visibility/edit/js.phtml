@@ -1,0 +1,113 @@
+<?php
+/**
+ * Remove or Change Displayed States and Regions
+ *
+ * LICENSE
+ *
+ * This source file is subject to the Eltrino LLC EULA
+ * that is bundled with this package in the file LICENSE_EULA.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://eltrino.com/license-eula.txt
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@eltrino.com so we can send you a copy immediately.
+ *
+ * @category    Eltrino
+ * @package     Eltrino_Region
+ * @copyright   Copyright (c) 2015 Eltrino LLC. (http://eltrino.com)
+ * @license     http://eltrino.com/license-eula.txt  Eltrino LLC EULA
+ */
+?>
+
+<script>
+
+    require(['prototype']);
+    function countryChanged(countryElm) {
+        var countryCode = countryElm.value;
+        new Ajax.Request(
+            '<?php echo $this->getUrl('*/visibility/loadRegionConfiguration', array('_secure' => true)); ?>', {
+            method: 'post',
+            parameters: {countryCode: countryCode},
+            onSuccess: function (transport) {
+                var disabledRegionsElm = document.getElementById ( "visibility_disabled_regions"),
+                    commonsettingsElm = document.getElementById ( "visibility_common_settings"),
+                    response = transport.responseJSON;
+                try {
+
+                    var regions = response.regions;
+
+                    if (disabledRegionsElm && regions) {
+                        while(disabledRegionsElm.options.length > 0) {
+                            disabledRegionsElm.remove(0);
+                        }
+
+                        for (var i=0; i < regions.length; i++)
+                        {
+                            var option = document.createElement("option");
+                            option.title = regions[i].title;
+                            option.value = regions[i].value;
+                            option.selected = regions[i].selected;
+                            option.innerHTML = regions[i].label;
+                            disabledRegionsElm.appendChild(option);
+                        }
+                    }
+
+                    var commonsettings = response.commonsettings;
+
+                    if (commonsettingsElm && commonsettings) {
+                        while(commonsettingsElm.options.length > 0) {
+                            commonsettingsElm.remove(0);
+                        }
+
+                        if(commonsettings.value  != '-- Not Provided --')
+                        {
+                            for (var i=0; i < commonsettings.length; i++)
+                            {
+                                var option = document.createElement("option");
+                                option.value = commonsettings[i].value;
+                                option.innerHTML = commonsettings[i].label;
+                                commonsettingsElm.appendChild(option);
+                            }
+                            commonsettingsElm.disabled = false;
+
+                        }  else {
+                            var option = document.createElement("option");
+                            option.value = commonsettings.value;
+                            option.innerHTML = commonsettings.label;
+                            commonsettingsElm.appendChild(option);
+                            commonsettingsElm.disabled = true;
+                        }
+
+
+                    }
+                } catch (e) {
+                    alert('Error occurs during loading region configuration.');
+                }
+            }
+        });
+    }
+
+    function commonSettingsChanged(settingsElm) {
+        var regionIds = (settingsElm.options[settingsElm.selectedIndex].value).split(',');
+        var disabledRegionsElm = document.getElementById ( "visibility_disabled_regions");
+
+        for (var i = 0; i < disabledRegionsElm.options.length; i++) {
+            disabledRegionsElm.options[i].selected = false;
+        }
+        for (var i = 0; i < disabledRegionsElm.options.length; i++) {
+            for (var j = 0; j < regionIds.length; j++) {
+                if (disabledRegionsElm.options[i].value == regionIds[j]) {
+                    disabledRegionsElm.options[i].selected = "selected";
+                }
+            }
+        }
+    }
+
+    function regionsChanged(settingsElm) {
+        var commonsettingsElm = document.getElementById ( "visibility_common_settings");
+        commonsettingsElm.options[0].selected = true;
+    }
+
+
+
+</script>

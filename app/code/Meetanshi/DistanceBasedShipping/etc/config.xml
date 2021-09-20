@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <distancebasedshipping>
+                <active>1</active>
+                <title>Distance Shipping</title>
+                <name>Distance Shipping</name>
+                <specificerrmsg>This shipping method is currently unavailable. The value of your purchases must be more than 500 riyals for shipping to your city</specificerrmsg>
+                <distance_unit>kilometers</distance_unit>
+                <minimum_order_amount>0</minimum_order_amount>
+                <maximum_order_amount>1000000000</maximum_order_amount>
+                <maximum_distance_amount>0</maximum_distance_amount>
+                <sallowspecific>0</sallowspecific>
+                <sort_order>15</sort_order>
+                <model>Meetanshi\DistanceBasedShipping\Model\Carrier\DistanceBasedShipping</model>
+            </distancebasedshipping>
+        </carriers>
+    </default>
+</config>

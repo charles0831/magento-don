@@ -1,0 +1,25 @@
+{
+  "name": "eltrino/region",
+  "type": "magento2-module",
+  "license": "OSL-3.0",
+  "description": "Remove or Change Displayed States and Regions",
+  "version": "2.2.5",
+  "require": {
+    "php": "~5.6|~7.0"
+  },
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Eltrino LLC",
+      "email": "license@eltrino.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Eltrino\\Region\\": ""
+    },
+    "files": [
+      "registration.php"
+    ]
+  }
+}

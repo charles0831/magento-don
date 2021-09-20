@@ -25,38 +25,40 @@ if ($block && isset($product_view['main_custom_block2']) && $product_view['main_
                     echo "<ul class='can-ship'>
                                         <li>Free Shipping Via FedEx</li>
                                         <li>$39.00 White Glove Delivery Within 50 Miles of Stores</li>
-                                        <li>Free In Store Pickup Plus Free Assembley</li>
+                                        <li>Free In Store Pickup Plus Free Assembly</li>
                                      </ul>";
                 } else if ($BoxDimension > 130 && $BoxDimension <= 164) {
                     echo "<ul class='can-ship'>
                                         <li>$39.00 White Glove Delivery Within 50 Miles of Stores</li>
                                         <li>$59.00 Delivery Via FedEx</li>
-                                        <li>Free In Store Pickup Plus Free Assembley</li>
+                                        <li>Free In Store Pickup Plus Free Assembly</li>
                                      </ul>";
                     //echo "<span class='can-ship'>Shipping price is $59.00 OR free in store pickup  plus free assembley</span>";
                 } else if ($BoxDimension > 164) {
                     echo "<ul class='can-ship'>
                                         <li>$39.00 White Glove Delivery Within 50 Miles of Stores</li>
                                         <li>$99.00 Curbside Delivery Via Truck</li>
-                                        <li>Free In Store Pickup Plus Free Assembley</li>
+                                        <li>Free In Store Pickup Plus Free Assembly</li>
                                      </ul>";
                     //echo "<span class='can-ship'>Shipping price is $99.00 OR free in store pickup  plus free assembley</span>";
                 } else {
-                    echo "<span class='cannot-ship'>" . "Free In Store Pickup Plus Free Assembley" . "</span>";
+                    echo "<span class='cannot-ship'>" . "Free In Store Pickup Plus Free Assembly" . "</span>";
                 }
             } else {
                 echo "<ul class='can-ship'>
                                     <li>$39.00 White Glove Delivery Within 50 Miles of Stores</li>
                                     <li>$99.00 Curbside Delivery Via Truck</li>
-                                    <li>Free In Store Pickup Plus Free Assembley</li>
+                                    <li>Free In Store Pickup Plus Free Assembly</li>
                                 </ul>";
-                //echo "<span class='can-ship'>Shipping price is $99.00 OR free in store pickup  plus free assembley</span>";
+                //echo "<span class='can-ship'>Shipping price is $99.00 OR free in store pickup  plus free Assembly</span>";
             }
         } else {
             echo "<ul class='can-ship'>
-                                <li>Free In Store Pickup Plus Free Assembley</li>
+                                <li>Curbside Delivery Outside 50 Mile Radius Of Store Fixed $99.00 Per Order</li>
+                                <li>Free In Store Pickup Plus Free Assembly</li>
+                                <li>White Glove Delivery Within 50 Mile Radius of Store Fixed $49.00 Per Order</li>
                             </ul>";
-            //echo "<span class='cannot-ship'>"."Free In Store Pickup  Plus Free Assembley"."</span>";
+            //echo "<span class='cannot-ship'>"."Free In Store Pickup  Plus Free Assembly"."</span>";
         }
         ?>
         <?php /* ?>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Meetanshi_DistanceBasedShipping::Manage" title="Distance Based Shipping" module="Meetanshi_DistanceBasedShipping" sortOrder="51" resource="Meetanshi_DistanceBasedShipping::Manage"/>
+        <add id="Meetanshi_DistanceBasedShipping::Warehouse" title="Warehouse Management" module="Meetanshi_DistanceBasedShipping" sortOrder="10"  action="dbs/index/index" resource="Meetanshi_DistanceBasedShipping::Warehouse" parent="Meetanshi_DistanceBasedShipping::Manage"/>
+        <add id="Meetanshi_DistanceBasedShipping::Configuration" title="Configuration" module="Meetanshi_DistanceBasedShipping" sortOrder="10"  action="admin/system_config/edit/section/carriers" resource="Meetanshi_DistanceBasedShipping::Configuration" parent="Meetanshi_DistanceBasedShipping::Manage"/>
+    </menu>
+</config>

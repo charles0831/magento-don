@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+
+    Remove or Change Displayed States and Regions
+
+    LICENSE
+
+    This source file is subject to the Eltrino LLC EULA
+    that is bundled with this package in the file LICENSE_EULA.txt.
+    It is also available through the world-wide-web at this URL:
+    http://eltrino.com/license-eula.txt
+    If you did not receive a copy of the license and are unable to
+    obtain it through the world-wide-web, please send an email
+    to license@eltrino.com so we can send you a copy immediately.
+
+    @category    Eltrino
+    @package     Eltrino_Region
+    @copyright   Copyright (c) 2020 Eltrino LLC. (http://eltrino.com)
+    @license     http://eltrino.com/license-eula.txt  Eltrino LLC EULA
+
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="core_collection_abstract_load_after">
+        <observer name="region_collection_load_after" instance="Eltrino\Region\Model\Observer" />
+    </event>
+</config>
